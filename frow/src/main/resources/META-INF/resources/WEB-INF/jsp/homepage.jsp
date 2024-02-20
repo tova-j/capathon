@@ -18,5 +18,7 @@
         <p>Welcome, Vendor!</p>
     </c:if>
 
+    <a href="/logout">Logout</a>
+
 </body>
 </html>
