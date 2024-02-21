@@ -5,6 +5,7 @@ import java.util.Collection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import com.frow.enums.Season;
 
 public class FashionLine {
 
@@ -18,10 +19,6 @@ public class FashionLine {
     private double price;
     private Season season;
     private int outfitIdsFillCount;
-
-    enum Season {
-        SPRING, SUMMER, FALL, WINTER
-    }
 
     public FashionLine(int designerId, String designerName, double price, Season season) {
         super();

@@ -4,9 +4,6 @@
     </head>
 
     <body>
-<<<<<<< Updated upstream
-        <p>Hello Designer, welcome to FROW!</p>
-=======
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">FROW</a>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -73,6 +70,5 @@
             </script>
           </div>
 
->>>>>>> Stashed changes
     </body>
 </html>

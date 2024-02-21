@@ -6,9 +6,6 @@ package com.frow.schemas;
  * This class demonstrates the use and interplay of Designer, FashionLine, Outfit, and Piece objects.
  */
 
-import com.frow.schemas.FashionLine.Season;
-import com.frow.schemas.Piece.ClothingType;
-import com.frow.schemas.Piece.Gender;
 
 public class Tester {
     
