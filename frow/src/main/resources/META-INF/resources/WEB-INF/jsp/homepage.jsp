@@ -30,6 +30,7 @@
             color: white;
             text-align: center;
             padding: 20px 0;
+            bottom: 0;
         }
         video {
             object-fit: cover;
@@ -48,7 +49,7 @@
               <a class="nav-link" href="#">Account Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Buy/Sell</a>
+              <a class="nav-link" href="/vendorWelcome">Buy/Sell</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Logout</a>
@@ -62,12 +63,52 @@
       </video>     
       <div class="jumbotron jumbotron-fluid" style="position:relative;">
         <div class="container">
-          <h1 class="display-4">Your Fashion Company Slogan</h1>
-          <p class="lead">Welcome to FROW</p>
+          <h1 class="display-4">COUNTDOWN TO FROW GALA</h1>
         </div>
+        <div id="countdown"></div>
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("May 30, 2024 00:00:00").getTime();
+
+            // Update the countdown every 1 second
+            var x = setInterval(function() {
+
+                // Get the current date and time
+                var now = new Date().getTime();
+
+                // Calculate the remaining time
+                var distance = countDownDate - now;
+
+                // Calculate days, hours, minutes, and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the countdown timer
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+                // If the countdown is over, display a message
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
+      </div>
+      <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </script>
 
     <c:set var="role" value="${role}" />
 
