@@ -2,6 +2,8 @@ package com.frow.schemas;
 
 public class FashionLine {
 
+    private final int MAX_NUM_OUTFITS = 15;
+
     private int id;
     
     private int designerId;
@@ -21,11 +23,25 @@ public class FashionLine {
         this.designerName = designerName;
         this.price = price;
         this.season = season;
-        this.outfitIds = new int[0]; // Assuming MAX_OUTFIT_COUNT is a constant or variable representing the maximum number of outfits
+        this.outfitIds = new int[MAX_NUM_OUTFITS]; 
     }
 
+    public boolean isFull() {
+        return outfitIdsFillCount >= MAX_NUM_OUTFITS;
+    }
 
-    
+    public void addOutfits(Collection<Outfit> outfits) {
+        for (Outfit outfit : outfits) {
+            addOneOutfit(outfit);
+        }
+    }
+
+    public void addOneOutfit(Outfit outfit) {
+        if (!isFull()) {
+            outfitIds[outfitIdsFillCount] = outfit.getId();
+            outfitIdsFillCount++;
+        }
+    }
 
     public int getId() {
         return id;
