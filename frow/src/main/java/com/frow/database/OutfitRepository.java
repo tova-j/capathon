@@ -13,7 +13,7 @@ public interface OutfitRepository extends JpaRepository<Outfit, Integer> {
 
     public Collection<Outfit> findOutfitsByFashionLineId(int fashionLineId);
 
-    public Outfit findOutfitById(int id);
+    public Outfit findOutfitById(int outfitId);
 
     public @NonNull List<Outfit> findAll();
 
