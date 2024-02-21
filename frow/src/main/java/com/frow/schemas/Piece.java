@@ -1,7 +1,16 @@
 package com.frow.schemas;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Piece {
+
+    @Id
+    @GeneratedValue
     private int id;
+
     private String name;
     private double price;
     private Gender gender;
@@ -15,8 +24,7 @@ public class Piece {
         TOPS, BOTTOMS, ONEPIECES, SHOES, ACCESSORIES
     }
 
-    public Piece(int pieceId, String name, double price, Gender gender, ClothingType clothingType) {
-        this.id = pieceId;
+    public Piece(String name, double price, Gender gender, ClothingType clothingType) {
         this.name = name;
         this.price = price;
         this.gender = gender;

@@ -2,11 +2,16 @@ package com.frow.schemas;
 
 import java.util.Collection;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 public class FashionLine {
+
     private int id;
+    
     private int designerId;
     private String designerName;
-    private int numOutfits;
     private int[] outfitIds;
     private double price;
     private Season season;
@@ -16,33 +21,17 @@ public class FashionLine {
         SPRING, SUMMER, FALL, WINTER
     }
 
-    public FashionLine(int fashionLineId, int designerId, String designerName, double price, int numberOfOutfits, Season season) {
+    public FashionLine(int designerId, String designerName, double price, Season season) {
         super();
-        this.id = fashionLineId;
         this.designerId = designerId;
         this.designerName = designerName;
         this.price = price;
         this.season = season;
-
-        this.outfitIds = new int[numberOfOutfits];
+        this.outfitIds = new int[0]; // Assuming MAX_OUTFIT_COUNT is a constant or variable representing the maximum number of outfits
     }
 
-    public boolean isFull() {
-        return outfitIdsFillCount >= numOutfits;
-    }
 
-    public void addOutfits(Collection<Outfit> outfits) {
-        for (Outfit outfit : outfits) {
-            addOneOutfit(outfit);
-        }
-    }
-
-    public void addOneOutfit(Outfit outfit) {
-        if (!isFull()) {
-            outfitIds[outfitIdsFillCount] = outfit.getId();
-            outfitIdsFillCount++;
-        }
-    }
+    
 
     public int getId() {
         return id;
@@ -64,10 +53,6 @@ public class FashionLine {
         return price;
     }
 
-    public int getNumOutfits() {
-        return numOutfits;
-    }
-
     public int[] getOutfitIds() {
         return outfitIds;
     }
@@ -82,6 +67,6 @@ public class FashionLine {
 
     @Override 
     public String toString() {
-        return String.format("Fashion Line: [id=%d, designer=%s (id=%d), price=%f, season=%s, numOutfits=%d]", id, designerName, designerId, price, season.toString(), numOutfits);
+        return String.format("Fashion Line: [id=%d, designer=%s (id=%d), price=%f, season=%s, numOutfits=%d]", id, designerName, designerId, price, season.toString());
     }
 }
