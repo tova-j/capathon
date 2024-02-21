@@ -46,6 +46,60 @@
         .navbar-nav {
             margin-left: auto;
         }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-gap: 20px;
+        }
+
+        @media (min-width: 576px) {
+          .grid-container {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 768px) {
+          .grid-container {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 992px) {
+          .grid-container {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+        .grid-item {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+        }
+        .custom-button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .text1{
+            font-family: Canela,sans-serif;
+            text-align: center;
+            font-size: 22;
+            font-weight: bold;
+        }
+        .text2{
+            font-family: Canela,sans-serif;
+            font-size: 22;
+            font-weight: bold;
+        }
+        .text3{
+            font-size: 20;
+        }
     </style>
 </head>
 <body>
@@ -69,7 +123,8 @@
       <div class="jumbotron jumbotron-fluid" style="position:relative;">
         <div class="container">
           <h1 class="display-4">FROW</h1>
-          <h2 class="display-5">Your Destination For Upscale Fashion</h2>
+          <h2 class="display-5">Your Destination For Everything Fashion</h2>
+          <h2 class="display-5">Connecting Brands And Vendors All Around The World</h2>
           <p class="lead">EST 2017.</p>
         </div>
       </div>
@@ -86,6 +141,7 @@
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </script>
+<<<<<<< Updated upstream
 
     <c:set var="role" value="${role}" />
 
@@ -99,6 +155,35 @@
         <p>Welcome, Vendor!</p>
     </c:if> 
     <a href="/logout">Logout</a>
+=======
+    <div>
+      <h2 class="text1">Global Industry Brands That Trust FROW</h2>
+      <br>
+      <div class="grid-container">
+        <div class="grid-item"><img decoding="async" src="https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-500x313.png" alt="Prada Logo" srcset="https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-500x313.png 500w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-100x63.png 100w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-140x88.png 140w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-768x480.png 768w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-1536x960.png 1536w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-2048x1280.png 2048w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-320x200.png 320w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-640x400.png 640w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-360x225.png 360w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-720x450.png 720w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-1080x675.png 1080w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-800x500.png 800w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-1024x640.png 1024w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-1280x800.png 1280w" sizes="(max-width: 500px) 100vw, 500px"></div>
+        <div class="grid-item"><img decoding="async" class="aligncenter size-medium wp-image-105760" src="https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-500x281.png" alt="Louis Vuitton logo" width="500" height="345" srcset="https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-500x281.png 500w, https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-140x79.png 140w, https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-768x432.png 768w, https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-1536x864.png 1536w, https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-2048x1152.png 2048w" sizes="(max-width: 500px) 100vw, 500px"></div>
+        <div class="grid-item"><img decoding="async" class="aligncenter size-medium wp-image-89364" src="https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-500x345.png" alt="Athleta logo" width="500" height="345" srcset="https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-500x345.png 500w, https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-140x97.png 140w, https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-768x530.png 768w, https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-1536x1059.png 1536w, https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-2048x1412.png 2048w" sizes="(max-width: 500px) 100vw, 500px"></div>
+        <div class="grid-item"><img decoding="async" class="aligncenter size-medium wp-image-166861" src="https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-500x281.png" alt="Tommy Hilfiger logo" width="500" height="345" srcset="https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-500x281.png 500w, https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-140x79.png 140w, https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-768x432.png 768w, https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-1536x864.png 1536w, https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-2048x1152.png 2048w" sizes="(max-width: 500px) 100vw, 500px"></div>
+    
+      </div>
+      <br>
+      <br>
+      <h1 class="text2">Venturous Vendors.</h1>
+      <br>
+      <h3 class="text3"> Power Of Discovery</h3>
+      <p> identify brands that your customers will love with FROW</p>
+      <h3 class="text3"> Fashion Forward</h3>
+      <p> exclusive access to innovative & trendsetting fashion shows</p>
+      <h3 class="text3"> Conscious Couture</h3>
+      <p> curated content aligning with your brand's mission</p>
+    </div>
+
+    <div>
+      <button type="button" class="custom.button" onclick="redirectToUrl('/apply')"> Apply to be a Vendor</button>
+    </div>
+   
+
+>>>>>>> Stashed changes
 
 </body>
 <footer>
