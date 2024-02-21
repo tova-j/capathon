@@ -27,10 +27,13 @@ public class FrowApplication implements CommandLineRunner {
 		// want to actually execute the query, so need to call
 		// 	our predefined method on the corresponding instance of that class
 
-		//logger.info("All users -> {}", pieceRepo.findAll());
-		logger.info("Piece id 1001 -> {}", pieceRepo.findPieceById(1001)); 
-		logger.info("Piece id 1002 -> {}", pieceRepo.findPieceById(1002)); 
-		logger.info("Piece id 1003 -> {}", pieceRepo.findPieceById(1003)); 
+		logger.info("\nAll pieces -> {}", pieceRepo.findAll());
+		logger.info("\nPiece id 1001 -> {}", pieceRepo.findPieceById(1001)); 
+		logger.info("\nPiece id 1002 -> {}", pieceRepo.findPieceById(1002)); 
+		logger.info("\nPiece id 1003 -> {}", pieceRepo.findPieceById(1003)); 
+
+		logger.info("\nPieces with Outfit Id 5011 -> {}", pieceRepo.findPiecesByOutfitId(5011));
+		logger.info("\nPieces with Outfit Id 5012 -> {}", pieceRepo.findPiecesByOutfitId(5012));
 	}
 
 }

@@ -11,6 +11,7 @@ public class Piece {
     @GeneratedValue
     private int id;
 
+    private int outfitId;
     private String name;
     private double price;
     private String imageUrl;
@@ -32,7 +33,8 @@ public class Piece {
         // in order for DB application to work
     }
 
-    public Piece(String name, double price, String imageUrl, Gender gender, ClothingType clothingType) {
+    public Piece(int outfitId, String name, double price, String imageUrl, Gender gender, ClothingType clothingType) {
+        this.outfitId = outfitId;
         this.name = name;
         this.price = price;
         this.gender = gender;
@@ -45,11 +47,17 @@ public class Piece {
         return id;
     }
 
+    public int getOutfitId() {
+        return outfitId;
+    }
+
+    public void setOutfitId(int outfitId) {
+        this.outfitId = outfitId;
+    }
 
     public String getName() {
         return name;
     }
-
 
     public void setName(String name) {
         this.name = name;
@@ -85,18 +93,17 @@ public class Piece {
     }
 
 
-    public ClothingType getclothingType() {
+    public ClothingType getClothingType() {
         return clothingType;
     }
 
-
-    public void setclothingType(ClothingType clothingType) {
+    public void setClothingType(ClothingType clothingType) {
         this.clothingType = clothingType;
     }
 
     @Override
     public String toString() {
-        return "Piece [id=" + id + ", name=" + name + ", price=" + price + ", imageUrl=" + imageUrl + ", gender=" + gender + ", clothingType=" + clothingType
+        return "\n\tPiece [id=" + id + ", outfitId=" + outfitId + ", name=" + name + ", price=" + price + ", imageUrl=" + imageUrl + ", gender=" + gender + ", clothingType=" + clothingType
                 + "]";
     }
 }
