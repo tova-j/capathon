@@ -13,6 +13,7 @@ public class Piece {
 
     private String name;
     private double price;
+    private String imageUrl;
     private Gender gender;
     private ClothingType type;
 
@@ -24,11 +25,12 @@ public class Piece {
         TOPS, BOTTOMS, ONEPIECES, SHOES, ACCESSORIES
     }
 
-    public Piece(String name, double price, Gender gender, ClothingType clothingType) {
+    public Piece(String name, double price, String imageUrl, Gender gender, ClothingType clothingType) {
         this.name = name;
         this.price = price;
         this.gender = gender;
         this.type = clothingType;
+        this.imageUrl = imageUrl;
     }
 
     
@@ -56,6 +58,15 @@ public class Piece {
         this.price = price;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 
     public Gender getGender() {
         return gender;
@@ -78,7 +89,7 @@ public class Piece {
 
     @Override
     public String toString() {
-        return "Piece [id=" + id + ", name=" + name + ", price=" + price + ", gender=" + gender + ", type=" + type
+        return "Piece [id=" + id + ", name=" + name + ", price=" + price + ", imageUrl=" + imageUrl + ", gender=" + gender + ", type=" + type
                 + "]";
     }
 }
