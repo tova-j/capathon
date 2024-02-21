@@ -15,7 +15,7 @@ public class Piece {
     private double price;
     private String imageUrl;
     private Gender gender;
-    private ClothingType type;
+    private ClothingType clothingType;
 
     enum Gender {
         FEMALE, MALE, UNISEX
@@ -25,11 +25,18 @@ public class Piece {
         TOPS, BOTTOMS, ONEPIECES, SHOES, ACCESSORIES
     }
 
+    public Piece() {
+        // this is the default, no argument constructor.
+        // usually provided by Java as default. 
+        // since we provided constructor with args below, need to provide this one too
+        // in order for DB application to work
+    }
+
     public Piece(String name, double price, String imageUrl, Gender gender, ClothingType clothingType) {
         this.name = name;
         this.price = price;
         this.gender = gender;
-        this.type = clothingType;
+        this.clothingType = clothingType;
         this.imageUrl = imageUrl;
     }
 
@@ -78,18 +85,18 @@ public class Piece {
     }
 
 
-    public ClothingType getType() {
-        return type;
+    public ClothingType getclothingType() {
+        return clothingType;
     }
 
 
-    public void setType(ClothingType type) {
-        this.type = type;
+    public void setclothingType(ClothingType clothingType) {
+        this.clothingType = clothingType;
     }
 
     @Override
     public String toString() {
-        return "Piece [id=" + id + ", name=" + name + ", price=" + price + ", imageUrl=" + imageUrl + ", gender=" + gender + ", type=" + type
+        return "Piece [id=" + id + ", name=" + name + ", price=" + price + ", imageUrl=" + imageUrl + ", gender=" + gender + ", clothingType=" + clothingType
                 + "]";
     }
 }
