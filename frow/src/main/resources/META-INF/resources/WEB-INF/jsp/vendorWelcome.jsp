@@ -57,13 +57,13 @@
               <a class="nav-link" href="/shopPage">Buy</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contactUs">Orders</a>
+              <a class="nav-link" href="/vendorOrders">Orders</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/contactUs">Insights</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/customLogin">View Cart</a>
+              <a class="nav-link" href="/cart">View Cart</a>
             </li>
           </ul>
         </div>
@@ -80,6 +80,9 @@
           <h2 class="display-5">FROW FALL 2024</h2>
           <p class="lead">9.21.2024</p>
         </div>
+        <div class="container mt-5">
+          <button class="shop-now-btn">Shop Now</button>
+      </div>
       </div>
       <div class="container">
         <br>

@@ -27,6 +27,21 @@ public class VendorWebAppController {
         return "designerShopPage";
     }
 
+    @RequestMapping(value="/outfitShopPage")
+    public String gotoOutfitShopPage() {
+        return "outfitShopPage";
+    }
+
+    @RequestMapping(value="/cart")
+    public String gotoCart() {
+        return "cart";
+    }
+
+    @RequestMapping(value="/vendorOrders")
+    public String gotoOrders() {
+        return "vendorOrders";
+    }
+
     @RequestMapping(value="signup", method=RequestMethod.GET)
     public String gotoDesignerWelcomePage() {
         return "vendorSignup";

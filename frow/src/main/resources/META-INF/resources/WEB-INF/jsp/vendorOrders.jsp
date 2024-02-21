@@ -1,5 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
@@ -9,13 +7,16 @@
     <title>FROW - Upscale Fashion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
+       body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
             margin: 0;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
+        }
+        .row{
+            padding: 10px;
         }
         header {
             color: rgb(0, 0, 0);
@@ -46,60 +47,66 @@
         .navbar-nav {
             margin-left: auto;
         }
+        .navbar-brand {
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">FROW</a>
+        <a class="navbar-brand" href="/vendorWelcome">FROW</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/customLogin">Login</a>
+              <a class="nav-link" href="/shopPage">Buy</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/vendorSignup">Apply as Vendor</a>
+              <a class="nav-link" href="/vendorOrders">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/vendorWelcome">Insights</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cart">View Cart</a>
             </li>
           </ul>
         </div>
-      </nav> 
-      <video autoplay muted loop style="position:absolute; z-index:-1; top:0; left:0; width:100%; height:100%;">
-        <source src="https://player.vimeo.com/progressive_redirect/playback/830518852/rendition/540p/file.mp4?loc=external&amp;signature=b0a9a0a2ed476765840a13941639b7f03f2c1c4d775c780bd7d29ece6772e242" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>     
-      <div class="jumbotron jumbotron-fluid" style="position:relative;">
-        <div class="container">
-          <h1 class="display-4">FROW</h1>
-          <h2 class="display-5">Your Destination For Upscale Fashion</h2>
-          <p class="lead">EST 2017.</p>
-        </div>
-      </div>
-      <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
+      </nav>
+      
+<div class="container mt-5">
+    <h2>Previous Orders</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2022-02-21</td>
+                    <td>Shirt</td>
+                    <td>2</td>
+                    <td>$40.00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2022-02-22</td>
+                    <td>Pants</td>
+                    <td>1</td>
+                    <td>$30.00</td>
+                </tr>
+                <!-- Add more rows for other orders -->
+            </tbody>
+        </table>
+    </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </script>
-
-    <c:set var="role" value="${role}" />
-
-    <!-- if role is designer -->
-    <c:if test="${role eq 'ROLE_DESIGNER'}">
-        <p>Welcome, Designer!</p>
-    </c:if>
-    
-    <!-- else if role is vendor -->
-    <c:if test="${role eq 'ROLE_VENDOR'}">
-        <p>Welcome, Vendor!</p>
-    </c:if> 
-    <a href="/logout">Logout</a>
-
 </body>
 <footer>
     <div class="container">
@@ -107,3 +114,5 @@
     </div>
 </footer>
 </html>
+
+

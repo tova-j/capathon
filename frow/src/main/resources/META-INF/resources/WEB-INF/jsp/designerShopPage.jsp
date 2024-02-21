@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -7,13 +6,16 @@
     <title>FROW - Upscale Fashion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
+       body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
             margin: 0;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
+        }
+        .row{
+            padding: 10px;
         }
         header {
             color: rgb(0, 0, 0);
@@ -44,24 +46,27 @@
         .navbar-nav {
             margin-left: auto;
         }
+        .navbar-brand {
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">FROW</a>
+        <a class="navbar-brand" href="/vendorWelcome">FROW</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="/shopPage">Buy</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contactUs">Orders</a>
+              <a class="nav-link" href="/vendorOrders">Orders</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contactUs">Insights</a>
+              <a class="nav-link" href="/vendorWelcome">Insights</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/customLogin">View Cart</a>
+              <a class="nav-link" href="/cart">View Cart</a>
             </li>
           </ul>
         </div>
@@ -80,7 +85,7 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="designer2.html" class="text-decoration-none text-dark">
+                <a href= "/outfitShopPage" class="text-decoration-none text-dark">
                     <div class="card">
                         <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://1000logos.net/wp-content/uploads/2021/11/Calvin-Klein-logo.png" width="350" height="281">
                         <div class="card-body">
