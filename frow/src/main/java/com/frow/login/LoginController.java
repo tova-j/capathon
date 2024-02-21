@@ -9,9 +9,13 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.frow.user.CustomUser;
+import com.frow.user.CustomUserRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,6 +23,12 @@ import jakarta.servlet.http.HttpServletResponse;
 @Controller
 public class LoginController {
 
+	private CustomUserRepository userRepository;
+	
+	public LoginController(CustomUserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+	
 	// Home page for users that are authenticated
 	@RequestMapping(value = "/home")
 	public String goToHomepage(ModelMap model) {
@@ -39,14 +49,25 @@ public class LoginController {
 		return "";
 	}
 
-	@RequestMapping(value="/login")
+	@RequestMapping(value="/customLogin")
 	public String login() {
 		return "login";
 	}
 
-	@RequestMapping(value="/loginProcess")
+	@PostMapping(value="/loginProcess")
 	public String loginProcess(@RequestParam String usernameParameter, @RequestParam String passwordParameter) {
-		return "home";
+		System.out.println(usernameParameter + " " + passwordParameter);
+		CustomUser user = userRepository.findByUsernameAndPassword(usernameParameter, passwordParameter);
+		if (user != null) {
+			System.out.println("USER" + user);
+			if (user.getRole().equals("ROLE_DESIGNER")) {
+				return "designerWelcome";	
+			}
+			else if (user.getRole().equals("ROLE_VENDOR")) {
+				return "vendorWelcome";
+			}
+		}
+		return "login";
 	}
 
 	// handle log out

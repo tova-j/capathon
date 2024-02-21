@@ -14,29 +14,14 @@
                 <fieldset>
                     <legend>Please Login</legend>
                     <!-- use param.error assuming FormLoginConfigurer#failureUrl contains the query parameter error -->
-                    <c:if test="${param.error != null}">
-                        <div>
-                            Failed to login.
-
-                            <c:if test="${SPRING_SECURITY_LAST_EXCEPTION != null}">
-                                Reason:
-                                <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
-                            </c:if>
-                        </div>
-                    </c:if>
-                    <!-- the configured LogoutConfigurer#logoutSuccessUrl is /login?logout and contains the query param logout -->
-                    <c:if test="${param.logout != null}">
-                        <div>
-                            You have been logged out.
-                        </div>
-                    </c:if>
+                    
                     <p>
                         <label for="username">Username</label>
-                        <input type="text" id="username" name="username" />
+                        <input type="text" id="username" name="usernameParameter" />
                     </p>
                     <p>
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" />
+                        <input type="password" id="password" name="passwordParameter" />
                     </p>
                     <!-- if using RememberMeConfigurer make sure remember-me matches RememberMeConfigurer#rememberMeParameter -->
                     <!-- if using RememberMeConfigurer make sure remember-me matches RememberMeConfigurer#rememberMeParameter -->
@@ -45,8 +30,8 @@
                         <input type="checkbox" id="remember-me" name="remember-me" />
                     </p>
                     <div>
-                        <button type="button" class="btn btn-success" onclick="redirectToUrl('/home')">Log in</button>
-                        <button type="button" class="btn btn-info" onclick="redirectToUrl('/signup')">Sign Up</button>
+                        <button type="submit" class="submit">Log in</button>
+                        <!-- <button type="button" class="btn btn-info" onclick="redirectToUrl('/signup')">Sign Up</button> -->
                     </div>
                 </fieldset>
             </form>
