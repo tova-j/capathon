@@ -1,24 +1,27 @@
 package com.frow.schemas;
 
-import java.util.Collection;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import com.frow.enums.Season;
 
+@Entity
 public class FashionLine {
 
-    private final int MAX_NUM_OUTFITS = 15;
-
+    @Id
+    @GeneratedValue
     private int fashionLineId;
     
     private int designerId;
     private String designerName;
-    private int[] outfitIds;
     private double price;
     private Season season;
-    private int outfitIdsFillCount;
+    private int numOutfits;
+
+    
+    public FashionLine() {
+        // need to provide this in order for DB application to work
+    }
 
     public FashionLine(int designerId, String designerName, double price, Season season) {
         super();
@@ -26,24 +29,10 @@ public class FashionLine {
         this.designerName = designerName;
         this.price = price;
         this.season = season;
-        this.outfitIds = new int[MAX_NUM_OUTFITS]; 
     }
 
-    public boolean isFull() {
-        return outfitIdsFillCount >= MAX_NUM_OUTFITS;
-    }
-
-    public void addOutfits(Collection<Outfit> outfits) {
-        for (Outfit outfit : outfits) {
-            addOneOutfit(outfit);
-        }
-    }
-
-    public void addOneOutfit(Outfit outfit) {
-        if (!isFull()) {
-            outfitIds[outfitIdsFillCount] = outfit.getId();
-            outfitIdsFillCount++;
-        }
+    public void addOutfit(int numNewOutfits) {
+        numOutfits += numNewOutfits;
     }
 
     public int getId() {
@@ -54,20 +43,28 @@ public class FashionLine {
         return designerId;
     }
 
-    public String getDesignerName() {
-        return designerName;
+    public void setDesignerId(int designerId) {
+        this.designerId = designerId;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setDesignerName(String designerName) {
+        this.designerName = designerName;
+    }
+
+    public String getDesignerName() {
+        return designerName;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public int[] getOutfitIds() {
-        return outfitIds;
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getNumOutfits() {
+        return numOutfits;
     }
 
     public void setSeason(Season season) {
@@ -78,8 +75,9 @@ public class FashionLine {
         return season;
     }
 
-    @Override 
+    @Override
     public String toString() {
-        return String.format("Fashion Line: [id=%d, designer=%s (id=%d), price=%f, season=%s, numOutfits=%d]", fashionLineId, designerName, designerId, price, season.toString());
+        return "FashionLine [fashionLineId=" + fashionLineId + ", designerId=" + designerId + ", designerName="
+                + designerName + ", price=" + price + ", season=" + season + ", numOutfits=" + numOutfits + "]";
     }
 }

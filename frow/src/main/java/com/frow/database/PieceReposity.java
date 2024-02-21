@@ -17,7 +17,7 @@ public interface PieceReposity extends JpaRepository<Piece, Integer> {
 
     public Collection<Piece> findPiecesByOutfitId(int outfitId);
 
-    public Piece findPieceById(int id);
+    public Piece findPieceById(int pieceId);
 
     public @NonNull List<Piece> findAll();
 
