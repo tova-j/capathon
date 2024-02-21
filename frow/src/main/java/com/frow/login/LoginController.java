@@ -39,7 +39,7 @@ public class LoginController {
 		return "";
 	}
 
-	@RequestMapping(value="/login")
+	@RequestMapping(value="/customLogin")
 	public String login() {
 		return "login";
 	}

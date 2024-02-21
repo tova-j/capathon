@@ -7,9 +7,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class VendorWebAppController {
     
-    @RequestMapping(value="vendor", method=RequestMethod.GET)
+    /*@RequestMapping(value="vendor", method=RequestMethod.GET)
     public String gotoVendorPage() {
         return "vendorWelcome";
+    }*/
+
+    @RequestMapping(value="/vendorWelcome")
+    public String gotoVendorPage() {
+        return "vendorWelcome";
+    }
+
+    @RequestMapping(value="/shopPage")
+    public String gotoShopPage() {
+        return "shopPage";
+    }
+
+    @RequestMapping(value="/designerShopPage")
+    public String gotoDesignerShopPage() {
+        return "designerShopPage";
     }
 
     @RequestMapping(value="signup", method=RequestMethod.GET)

@@ -54,10 +54,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
+              <a class="nav-link" href="/customLogin">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/apply">Apply as Vendor</a>
+              <a class="nav-link" href="/contactUs">Apply as Vendor</a>
             </li>
           </ul>
         </div>

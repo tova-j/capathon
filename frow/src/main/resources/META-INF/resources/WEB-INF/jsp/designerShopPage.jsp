@@ -1,5 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
@@ -68,46 +66,41 @@
           </ul>
         </div>
       </nav> 
-      <video autoplay muted loop style="position:absolute; z-index:-1; top:0; left:0; width:100%; height:100%;">
-        <source src="https://player.vimeo.com/progressive_redirect/playback/830518852/rendition/540p/file.mp4?loc=external&amp;signature=b0a9a0a2ed476765840a13941639b7f03f2c1c4d775c780bd7d29ece6772e242" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>     
-      <div class="jumbotron jumbotron-fluid" style="position:relative;">
-        <div class="container">
-          <h1 class="display-4">Upcoming Events</h1>
-          <h2 class="display-5">FROW GALA 2024</h2>
-          <p class="lead">5.30.2024</p>
-          <h2 class="display-5">FROW FALL 2024</h2>
-          <p class="lead">9.21.2024</p>
-        </div>
-      </div>
       <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <h1>Designers</h1>
+        <div class="row mt-3">
+            <div class="col-md-4 mb-4">
+                <a href="designer1.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img decoding="async" class="aligncenter size-medium wp-image-196195" src="https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-500x281.png" alt="Dior Logo" width="350" height="281" srcset="https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-500x281.png 500w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-140x79.png 140w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-768x432.png 768w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-1536x864.png 1536w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-2048x1152.png 2048w" sizes="(max-width: 500px) 100vw, 500px">
+                        <div class="card-body">
+                            <h5 class="card-title">Summer Daze</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="designer2.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://1000logos.net/wp-content/uploads/2021/11/Calvin-Klein-logo.png" width="350" height="281">
+                        <div class="card-body">
+                            <h5 class="card-title">Winter Wonders</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="designer3.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img id="fancybox-img" src="https://1000logos.net/wp-content/uploads/2017/10/Kobe-bryant-Logo.png" alt="Kobe bryant Logo" width="350" height="281">
+                        <div class="card-body">
+                            <h5 class="card-title">Fall Frenzy</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </script>
-
-    <c:set var="role" value="${role}" />
-
-    <!-- if role is designer -->
-    <c:if test="${role eq 'ROLE_DESIGNER'}">
-        <p>Welcome, Designer!</p>
-    </c:if>
-    
-    <!-- else if role is vendor -->
-    <c:if test="${role eq 'ROLE_VENDOR'}">
-        <p>Welcome, Vendor!</p>
-    </c:if> 
-    <a href="/logout">Logout</a>
-
 </body>
 <footer>
     <div class="container">
