@@ -8,7 +8,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -56,10 +55,8 @@ public class LoginController {
 
 	@PostMapping(value="/loginProcess")
 	public String loginProcess(@RequestParam String usernameParameter, @RequestParam String passwordParameter) {
-		System.out.println(usernameParameter + " " + passwordParameter);
 		CustomUser user = userRepository.findByUsernameAndPassword(usernameParameter, passwordParameter);
 		if (user != null) {
-			System.out.println("USER" + user);
 			if (user.getRole().equals("ROLE_DESIGNER")) {
 				return "designerWelcome";	
 			}
@@ -71,14 +68,14 @@ public class LoginController {
 	}
 
 	// handle log out
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/customLogout", method = RequestMethod.GET)
 	public String logOut(HttpServletRequest request, HttpServletResponse response) {
 		// if user does not have either role, they see just homepage
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if (auth != null) {
+		if (auth != null) {	
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
-		return "redirect:";
+		return "landingpage";
 	}
 
 	// landing page for all users

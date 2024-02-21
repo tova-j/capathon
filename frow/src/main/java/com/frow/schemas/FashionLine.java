@@ -1,11 +1,5 @@
 package com.frow.schemas;
 
-import java.util.Collection;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
 public class FashionLine {
 
     private int id;

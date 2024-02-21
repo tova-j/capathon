@@ -52,7 +52,7 @@
               <a class="nav-link" href="/vendorWelcome">Buy/Sell</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Logout</a>
+              <a class="nav-link" href="/customLogout">Logout</a>
             </li>
           </ul>
         </div>
