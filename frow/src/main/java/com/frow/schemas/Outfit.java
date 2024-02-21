@@ -1,41 +1,37 @@
 package com.frow.schemas;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+@Entity
 public class Outfit {
 
-    private int id;
+    @Id
+    @GeneratedValue
+    private int outfitId;
+
     private int fashionLineId;
     private double price;
-    private ArrayList<Piece> pieces;
     private int numPieces;
     private String imageUrl;
 
-    public Outfit(int outfitId, int fashionLineId, String imageUrl) {
-        this.id = outfitId;
+    public Outfit() {
+        // need to provide this in order for DB application to work
+    }
+
+    public Outfit(int fashionLineId, int price, String imageUrl) {
         this.fashionLineId = fashionLineId;
-
-        this.pieces = new ArrayList<>();
+        this.price = price;
+        this.imageUrl = imageUrl;
     }
 
-    public void addPieces(Collection<Piece> newPieces) {
-        for (Piece piece : newPieces) {
-            addOnePiece(piece);
-        }
-    }
-
-    public void addOnePiece(Piece newPiece) {
-        pieces.add(newPiece);
-        numPieces++;
+    public void addPiece(Integer numNewPieces) {
+        numPieces += numNewPieces;
     }
 
     public int getId() {
-        return id;
+        return outfitId;
     }
 
     public int getFashionLineId() {
@@ -44,14 +40,6 @@ public class Outfit {
 
     public void setFashionLineId(int fashionLineId) {
         this.fashionLineId = fashionLineId;
-    }
-
-    public String getPieces() {
-        StringBuilder builder = new StringBuilder();
-        for (Piece piece : pieces) {
-            builder.append("\n\t" + piece);
-        }
-        return builder.toString();
     }
 
     public int getNumPieces() {
@@ -76,6 +64,6 @@ public class Outfit {
 
     @Override
     public String toString() {
-        return String.format("Outfit [id=%d, fashionLine=%d, price=%f, imageUrl=%s, numPieces=%d]", id, fashionLineId, price, imageUrl, numPieces);
+        return String.format("Outfit [id=%d, fashionLine=%d, price=%f, imageUrl=%s, numPieces=%d]", outfitId, fashionLineId, price, imageUrl, numPieces);
     }
 }

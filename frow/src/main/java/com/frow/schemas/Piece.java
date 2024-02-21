@@ -9,7 +9,7 @@ public class Piece {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int pieceId;
 
     private int outfitId;
     private String name;
@@ -44,7 +44,7 @@ public class Piece {
 
     
     public int getId() {
-        return id;
+        return pieceId;
     }
 
     public int getOutfitId() {
@@ -103,7 +103,7 @@ public class Piece {
 
     @Override
     public String toString() {
-        return "\n\tPiece [id=" + id + ", outfitId=" + outfitId + ", name=" + name + ", price=" + price + ", imageUrl=" + imageUrl + ", gender=" + gender + ", clothingType=" + clothingType
+        return "\n\tPiece [id=" + pieceId + ", outfitId=" + outfitId + ", name=" + name + ", price=" + price + ", imageUrl=" + imageUrl + ", gender=" + gender + ", clothingType=" + clothingType
                 + "]";
     }
 }

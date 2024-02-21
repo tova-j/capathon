@@ -10,7 +10,7 @@ public class FashionLine {
 
     private final int MAX_NUM_OUTFITS = 15;
 
-    private int id;
+    private int fashionLineId;
     
     private int designerId;
     private String designerName;
@@ -50,7 +50,7 @@ public class FashionLine {
     }
 
     public int getId() {
-        return id;
+        return fashionLineId;
     }
 
     public int getDesignerId() {
@@ -83,6 +83,6 @@ public class FashionLine {
 
     @Override 
     public String toString() {
-        return String.format("Fashion Line: [id=%d, designer=%s (id=%d), price=%f, season=%s, numOutfits=%d]", id, designerName, designerId, price, season.toString());
+        return String.format("Fashion Line: [id=%d, designer=%s (id=%d), price=%f, season=%s, numOutfits=%d]", fashionLineId, designerName, designerId, price, season.toString());
     }
 }
