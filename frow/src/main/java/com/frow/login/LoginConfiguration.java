@@ -49,12 +49,15 @@ public class LoginConfiguration {
 	@Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.csrf(c -> c.disable());
-		http
-			.formLogin(
-				login -> login
-					.loginPage("/login")
-					.loginProcessingUrl("/loginProcess"));
-
+		http.authorizeHttpRequests(
+			auth -> auth.anyRequest().authenticated());
+		http.headers().frameOptions().disable();
+		// http
+		// 	.formLogin(
+		// 		login -> login
+		// 			.loginPage("/login")
+		// 			.loginProcessingUrl("/loginProcess"));
+		http.formLogin(Customizer.withDefaults());
 		return http.build();
     }
 }
