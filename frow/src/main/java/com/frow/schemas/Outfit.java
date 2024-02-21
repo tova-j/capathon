@@ -3,14 +3,20 @@ package com.frow.schemas;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 public class Outfit {
+
     private int id;
     private int fashionLineId;
     private double price;
     private ArrayList<Piece> pieces;
     private int numPieces;
+    private String imageUrl;
 
-    public Outfit(int outfitId, int fashionLineId) {
+    public Outfit(int outfitId, int fashionLineId, String imageUrl) {
         this.id = outfitId;
         this.fashionLineId = fashionLineId;
 
@@ -30,6 +36,14 @@ public class Outfit {
 
     public int getId() {
         return id;
+    }
+
+    public int getFashionLineId() {
+        return fashionLineId;
+    }
+
+    public void setFashionLineId(int fashionLineId) {
+        this.fashionLineId = fashionLineId;
     }
 
     public String getPieces() {
@@ -52,8 +66,16 @@ public class Outfit {
         return price;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     @Override
     public String toString() {
-        return String.format("Outfit [id=%d, fashionLine=%d, price=%f, numPieces=%d]", id, fashionLineId, price, numPieces);
+        return String.format("Outfit [id=%d, fashionLine=%d, price=%f, imageUrl=%s, numPieces=%d]", id, fashionLineId, price, imageUrl, numPieces);
     }
 }

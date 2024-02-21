@@ -11,4 +11,14 @@ public class VendorWebAppController {
     public String gotoVendorPage() {
         return "vendorWelcome";
     }
+
+    @RequestMapping(value="signup", method=RequestMethod.GET)
+    public String gotoDesignerWelcomePage() {
+        return "vendorSignup";
+    }
+
+    @RequestMapping(value="signup", method=RequestMethod.POST)
+    public String gotoSignupConfirmationPage() {
+        return "signupConfirmation";
+    }
 }
