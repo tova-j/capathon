@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.frow.database.FashionLineRepository;
+import com.frow.database.OutfitRepository;
 import com.frow.enums.Season;
 import com.frow.schemas.FashionLine;
+import com.frow.schemas.Outfit;
 import com.frow.user.CustomUser;
 import com.frow.user.CustomUserRepository;
 import jakarta.servlet.http.HttpServlet;
@@ -30,6 +32,8 @@ public class DesignerController {
     private CustomUserRepository userRepository;
     @Autowired
     private FashionLineRepository fashionLineRepository;
+    @Autowired
+    private OutfitRepository outfitRepository;
 
     @RequestMapping(value = "/designerSellHomepage", method = RequestMethod.GET) 
     public String goToDesignerSellHomepage(ModelMap model, HttpServletRequest request) { 
@@ -62,6 +66,18 @@ public class DesignerController {
             return "openFashionLine";
         }
         return "designerSellHomepage";
+    }
+
+    @GetMapping(value="/designer/fashionLines/{fashionLineId}/outfits")
+    public String openFashionLineOutfits(@PathVariable String fashionLineId, ModelMap model) {
+        Integer id = Integer.parseInt(fashionLineId);
+        
+        if (id != null) {
+            List<Outfit> outfits = outfitRepository.findOutfitsByFashionLineId(id);
+            model.addAttribute("outfits", outfits);
+            return "openOutfits";
+        }
+        return "redirect:/designer/fashionLines/" + fashionLineId;
     }
 
     @PostMapping(value = "/addNewFashionLineHomepage")
