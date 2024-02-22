@@ -7,9 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.frow.database.OrderRecordRepository;
-
-import com.frow.database.FashionLineRepository;
+// import com.frow.database.OrderRecordRepository;
+// import com.frow.database.FashionLineRepository;
 // import com.frow.database.OutfitRepository;
 // import com.frow.database.PieceReposity;
 
@@ -25,11 +24,11 @@ public class FrowApplication implements CommandLineRunner {
 	// @Autowired
 	// OutfitRepository outfitRepo;
 
-	@Autowired
-	FashionLineRepository fashionLineRepo;
+	// @Autowired
+	// FashionLineRepository fashionLineRepo;
 
-	@Autowired
-	OrderRecordRepository orderRepo;
+	// @Autowired
+	// OrderRecordRepository orderRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(FrowApplication.class, args);
@@ -60,14 +59,14 @@ public class FrowApplication implements CommandLineRunner {
 		logger.info("\n\nAll fashion lines -> {}\n", fashionLineRepo.findAll());
 		logger.info("\n\nFashion Line id 8002 -> {}\n", fashionLineRepo.findById(8002));
 		logger.info("\n\nFashion lines with designer id 1 -> {}\n", fashionLineRepo.findFashionLineByDesignerId(1));
-		*/
+		
 
 		// Testing Order repo
 		logger.info("\n\nAll orders -> {}\n", orderRepo.findAll());
 		logger.info("\n\nOrder id 20001 -> {}\n", orderRepo.findById(20001));
 		logger.info("\n\nOrder id 20002 -> {}\n", orderRepo.findById(20002));
 		logger.info("\n\nOrders by user id 4111 -> {}\n", orderRepo.findOrderByUserId(4111));
-
+		*/
 	}
 
 }
