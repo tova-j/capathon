@@ -11,25 +11,25 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public class OrderRecord {
+public class CartRecord {
     
     @Id
     @GeneratedValue
     private int orderId;
 
     @JdbcTypeCode(SqlTypes.JSON)
-    public Map<Integer, Integer> orderDetails;
+    private Map<Integer, Integer> orderDetails;
 
     private int userId;
     private int numItems;
     private int pieceId;
 
-    public OrderRecord() {
+    public CartRecord() {
 
     }
 
 
-    public OrderRecord(int pieceId, int userId, int numItems) {
+    public CartRecord(int pieceId, int userId, int numItems) {
         this.pieceId = pieceId;
         this.userId = userId;
         this.numItems = numItems;
@@ -71,7 +71,7 @@ public class OrderRecord {
 
     @Override
     public String toString() {
-        return "OrderRecord [orderId=" + orderId + ", userId=" + userId + ", numItems=" + numItems + "]";
+        return "CartRecord [orderId=" + orderId + ", userId=" + userId + ", numItems=" + numItems + "]";
     }
 
     

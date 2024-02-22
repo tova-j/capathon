@@ -13,11 +13,13 @@ import jakarta.transaction.Transactional;
 
 @Repository
 @Transactional
-public interface PieceReposity extends JpaRepository<Piece, Integer> {
+public interface PieceRepository extends JpaRepository<Piece, Integer> {
 
     public Collection<Piece> findPiecesByOutfitId(int outfitId);
 
     public Piece findPieceById(int pieceId);
+
+    public List<Piece> findAllByOutfitId(int outfitId);
 
     public @NonNull List<Piece> findAll();
 
