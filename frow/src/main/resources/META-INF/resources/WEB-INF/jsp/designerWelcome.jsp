@@ -1,12 +1,52 @@
 <html>
-    <head>
-        <title>Designer Welcome</title>
-    </head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FROW - Upscale Fashion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        header {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+        }
+        .jumbotron {
+            background-size: cover;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            bottom: 0;
+            flex-shrink: 0; /* Don't allow the footer to shrink */
+            position: relative;
+            bottom: 0; /* Position the footer at the bottom of the viewport */
+            width: 100%;
+        }
+        video {
+            object-fit: cover;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+    </style>
+</head>
 
     <body>
-<<<<<<< Updated upstream
-        <p>Hello Designer, welcome to FROW!</p>
-=======
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">FROW</a>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -73,6 +113,5 @@
             </script>
           </div>
 
->>>>>>> Stashed changes
     </body>
 </html>
