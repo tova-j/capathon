@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -74,34 +75,26 @@
       </nav>
       
 <div class="container mt-5">
-    <h2>Previous Orders</h2>
+    <h2>Your orders.</h2>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Order ID</th>
                     <th>Date</th>
-                    <th>Product</th>
                     <th>Quantity</th>
-                    <th>Total</th>
+                    <th>Total Price</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2022-02-21</td>
-                    <td>Shirt</td>
-                    <td>2</td>
-                    <td>$40.00</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>2022-02-22</td>
-                    <td>Pants</td>
-                    <td>1</td>
-                    <td>$30.00</td>
-                </tr>
-                <!-- Add more rows for other orders -->
+                <c:forEach items="${orders}" var="order">
+                    <tr>
+                        <td>${order.orderId}</td>
+                        <td>${order.purchaseDate}</td>
+                        <td>${order.numItems}</td>
+                        <td>${order.totalPrice}</td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
     </div>

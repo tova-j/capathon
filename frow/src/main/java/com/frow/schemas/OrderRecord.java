@@ -22,6 +22,8 @@ public class OrderRecord {
 
     private int userId;
     private int numItems;
+    private double totalPrice;
+    private String purchaseDate;
 
     public OrderRecord() {
 
@@ -30,7 +32,8 @@ public class OrderRecord {
     public OrderRecord(int orderId, int userId) {
         this.orderId = orderId;
         this.userId = userId;
-
+        this.totalPrice = 0;
+        this.purchaseDate = "";
         this.orderDetails = new HashMap<>();
     }
 
@@ -48,6 +51,22 @@ public class OrderRecord {
 
     public void setOrderId(int orderId) {
         this.orderId = orderId;
+    }
+
+    public String getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    public void setPurchaseDate(String purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public int getUserId() {
