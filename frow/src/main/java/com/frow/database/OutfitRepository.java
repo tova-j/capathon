@@ -11,7 +11,7 @@ import com.frow.schemas.Outfit;
 
 public interface OutfitRepository extends JpaRepository<Outfit, Integer> {
 
-    public Collection<Outfit> findOutfitsByFashionLineId(int fashionLineId);
+    public List<Outfit> findOutfitsByFashionLineId(int fashionLineId);
 
     public Outfit findOutfitById(int outfitId);
 
