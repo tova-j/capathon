@@ -141,21 +141,6 @@
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </script>
-<<<<<<< Updated upstream
-
-    <c:set var="role" value="${role}" />
-
-    <!-- if role is designer -->
-    <c:if test="${role eq 'ROLE_DESIGNER'}">
-        <p>Welcome, Designer!</p>
-    </c:if>
-    
-    <!-- else if role is vendor -->
-    <c:if test="${role eq 'ROLE_VENDOR'}">
-        <p>Welcome, Vendor!</p>
-    </c:if> 
-    <a href="/logout">Logout</a>
-=======
     <div>
       <h2 class="text1">Global Industry Brands That Trust FROW</h2>
       <br>
@@ -183,7 +168,6 @@
     </div>
    
 
->>>>>>> Stashed changes
 
 </body>
 <footer>

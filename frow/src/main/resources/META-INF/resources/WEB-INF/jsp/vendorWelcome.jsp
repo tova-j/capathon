@@ -15,7 +15,10 @@
             min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
             margin: 0;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
+        }
+        .row{
+            padding: 10px;
         }
         header {
             color: rgb(0, 0, 0);
@@ -46,11 +49,14 @@
         .navbar-nav {
             margin-left: auto;
         }
+        .navbar-brand {
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">FROW</a>
+        <a class="navbar-brand" href="/vendorWelcome">FROW</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -60,7 +66,7 @@
               <a class="nav-link" href="/vendorOrders">Orders</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contactUs">Insights</a>
+              <a class="nav-link" href="/vendorWelcome">Insights</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/cart">View Cart</a>

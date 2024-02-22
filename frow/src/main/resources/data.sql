@@ -18,8 +18,8 @@ insert into fashion_line (fashion_line_id, designer_id, designer_name, num_outfi
 values (8003, 2, 'Christian Dior', 0, 1449.99, 2);
 
 
--- insert into custom_user (id, username, password, role)
--- values (1, 'user1', '1234', 'ROLE_DESIGNER');
+insert into custom_user (id, username, password, role)
+values (1, 'user1', '1234', 'ROLE_DESIGNER');
 
--- insert into custom_user (id, username, password, role)
--- values (2, 'user2', '123456', 'ROLE_VENDOR');
+insert into custom_user (id, username, password, role)
+values (2, 'user2', '123456', 'ROLE_VENDOR');
