@@ -100,6 +100,30 @@
         .text3{
             font-size: 20;
         }
+        .centered {
+          text-align: center;
+        }
+        .btn {
+            background-color: #333;
+            border: 1px;
+            color: white;
+            padding: 13px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+        }
+        .btn:hover {
+            background-color: #5f5f5f;
+            color: white;
+        }
+        .btn-signup {
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+        .extra-bottom-padding {
+          padding-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -111,7 +135,10 @@
               <a class="nav-link" href="/customLogin">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/signup">Apply as Vendor</a>
+              <a class="nav-link" href="/vendor-signup">Apply as Vendor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/designer-signup">Apply as Designer</a>
             </li>
           </ul>
         </div>
@@ -153,20 +180,20 @@
       </div>
       <br>
       <br>
-      <h1 class="text2">Venturous Vendors.</h1>
+      <h1 class="display-4 centered">Venturous Vendors.</h1>
       <br>
-      <h3 class="text3"> Power Of Discovery</h3>
-      <p> identify brands that your customers will love with FROW</p>
-      <h3 class="text3"> Fashion Forward</h3>
-      <p> exclusive access to innovative & trendsetting fashion shows</p>
-      <h3 class="text3"> Conscious Couture</h3>
-      <p> curated content aligning with your brand's mission</p>
+      <h3 class="text2 centered"> Power Of Discovery</h3>
+      <p class="centered"> identify brands that your customers will love with FROW</p>
+      <h3 class="text2 centered"> Fashion Forward</h3>
+      <p class="centered"> exclusive access to innovative & trendsetting fashion shows</p>
+      <h3 class="text2 centered"> Conscious Couture</h3>
+      <p class="centered"> curated content aligning with your brand's values</p>
     </div>
 
-    <div>
-      <button type="button" class="custom.button" onclick="redirectToUrl('/signup')"> Apply to be a Vendor</button>
+    <div class="container centered extra-bottom-padding">
+      <a class="btn btn-signup" href="/vendor-signup">Apply to be a Vendor</button>
     </div>
-   
+    
 
 
 </body>

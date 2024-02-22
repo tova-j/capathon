@@ -67,7 +67,7 @@ public class VendorController {
     }
 
     @RequestMapping(value="vendor-signup", method=RequestMethod.GET)
-    public String gotoDesignerWelcomePage() {
+    public String gotoVendorSignupPage() {
         return "vendorSignup";
     }
 

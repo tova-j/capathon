@@ -74,14 +74,9 @@ public class LoginController {
 	}
 
 	// handle log out
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/customLogout", method = RequestMethod.GET)
 	public String logOut(HttpServletRequest request, HttpServletResponse response) {
-		// if user does not have either role, they see just homepage
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if (auth != null) {
-			new SecurityContextLogoutHandler().logout(request, response, auth);
-		}
-		return "redirect:";
+		return "landingpage";
 	}
 
 	// landing page for all users
