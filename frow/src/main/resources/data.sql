@@ -17,6 +17,10 @@ values (8002, 1, 'Louis Vuitton', 0, 899.99, 3);
 insert into fashion_line (fashion_line_id, designer_id, designer_name, num_outfits, price, season)
 values (8003, 2, 'Christian Dior', 0, 1449.99, 2);
 
+insert into order_record (order_id, user_id, num_items)
+values (20001, 4111, 1);
+insert into order_record (order_id, user_id, num_items)
+values (20002, 4111, 2);
 
 insert into custom_user (id, username, password, first_name, last_name, role)
 values (1, 'user1', '1234', 'JOON', 'IM', 'ROLE_DESIGNER');
