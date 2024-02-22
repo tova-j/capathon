@@ -90,16 +90,16 @@
       
       <div class="jumbotron jumbotron-fluid" style="position:relative;">
         <div class="container">
-          <h2 class="display-6 dark-text">Welcome to the vendor application page.</h2>
+          <h2 class="display-6 dark-text">Welcome to the designer application page.</h2>
 
             <hr class="dark-text">
-            <p>We would love to have you on board as one of our select vendors, with access to XX unique luxury brands. 
+            <p>We would love to have you on board as one of our select designers, with access to XX invested vendors. 
                 Please fill out the form with your information, and we will get back to you with a decision on your 
                 application as soon as we can.
             </p>
 
             <p>
-                If you are a designer, please use our <a href="/designer-signup" class="dark-text">Designer Application</a>. 
+                If you are a vendor, please use our <a href="/vendor-signup" class="dark-text">Vendor Application</a>. 
             </p>
         
             <form method="post">

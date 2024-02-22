@@ -60,6 +60,10 @@
         .signup {
             padding-top: 15px;
         }
+        .btn-signup {
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
     </style>
 </head>
 <body>
@@ -99,7 +103,8 @@
                     </div>
                     <div>
                         <p class="signup">Don't have an account yet?</p>
-                        <a href="/signup" class="btn btn-signup">Sign Up</a>
+                        <a href="/vendor-signup" class="btn btn-signup">Sign Up as a Vendor</a>
+                        <a href="/designer-signup" class="btn btn-signup">Sign Up as a Designer</a>
                     </div>
                 </fieldset>
             </form>
