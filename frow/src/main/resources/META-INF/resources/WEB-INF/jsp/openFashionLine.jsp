@@ -1,0 +1,3 @@
+<html>
+    ${fashionLine}
+</html>
