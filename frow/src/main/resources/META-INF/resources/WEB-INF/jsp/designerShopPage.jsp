@@ -88,7 +88,7 @@
             <div class="col-md-4 mb-4">
                 <a href= "/outfitShopPage" class="text-decoration-none text-dark">
                     <div class="card">
-                        <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://1000logos.net/wp-content/uploads/2021/11/Calvin-Klein-logo.png" width="350" height="281">
+                        <img style="display: block;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://1000logos.net/wp-content/uploads/2021/11/Calvin-Klein-logo.png" width="350" height="281">
                         <div class="card-body">
                             <h5 class="card-title">Winter Wonders</h5>
                         </div>

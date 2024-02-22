@@ -111,7 +111,7 @@
               <a class="nav-link" href="/customLogin">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/vendorSignup">Apply as Vendor</a>
+              <a class="nav-link" href="/signup">Apply as Vendor</a>
             </li>
           </ul>
         </div>
@@ -164,7 +164,7 @@
     </div>
 
     <div>
-      <button type="button" class="custom.button" onclick="redirectToUrl('/apply')"> Apply to be a Vendor</button>
+      <button type="button" class="custom.button" onclick="redirectToUrl('/signup')"> Apply to be a Vendor</button>
     </div>
    
 
@@ -175,4 +175,10 @@
         <p>&copy; 2024 FROW. All Rights Reserved.</p>
     </div>
 </footer>
+
+<script>
+  function redirectToUrl(url) {
+      window.location.href = url;
+  }
+</script>
 </html>
