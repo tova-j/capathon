@@ -1,12 +1,25 @@
 package com.frow.vendor;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.frow.database.FashionLineRepository;
+import com.frow.user.CustomUser;
+import com.frow.user.CustomUserRepository;
+
 @Controller
-public class VendorWebAppController {
+public class VendorController {
     
+    @Autowired
+    private CustomUserRepository userRepository;
+
+    @Autowired
+    private FashionLineRepository fashionLineRepository;
     /*@RequestMapping(value="vendor", method=RequestMethod.GET)
     public String gotoVendorPage() {
         return "vendorWelcome";
@@ -17,9 +30,11 @@ public class VendorWebAppController {
         return "vendorWelcome";
     }
 
-    @RequestMapping(value="/shopPage")
-    public String gotoShopPage() {
-        return "shopPage";
+    @RequestMapping(value="/vendorShopPage")
+    public String gotoShopPage(ModelMap model) {
+        List<CustomUser> designers = userRepository.findAllCustomerUsersByRole("ROLE_DESIGNER");
+        model.addAttribute("designers", designers);
+        return "vendorShopPage";
     }
 
     @RequestMapping(value="/designerShopPage")

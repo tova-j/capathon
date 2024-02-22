@@ -58,7 +58,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/shopPage">Buy</a>
+              <a class="nav-link" href="/vendorShopPage">Buy</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/vendorOrders">Orders</a>
@@ -76,14 +76,18 @@
         <h1>Designers</h1>
         <div class="row mt-3">
             <div class="col-md-4 mb-4">
-                <a href="/designerShopPage" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img decoding="async" class="aligncenter size-medium wp-image-196195" src="https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-500x281.png" alt="Dior Logo" width="350" height="281" srcset="https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-500x281.png 500w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-140x79.png 140w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-768x432.png 768w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-1536x864.png 1536w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-2048x1152.png 2048w" sizes="(max-width: 500px) 100vw, 500px">
-                        <div class="card-body">
-                            <h5 class="card-title">Christian Dior</h5>
+                <c:forEach var="designer" items="${designers}">
+                    <a href="/designerShopPage" class="text-decoration-none text-dark">
+                        <div class="card">
+                            <img decoding="async" class="aligncenter size-medium wp-image-196195" src="https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-500x281.png" alt="Dior Logo" width="350" height="281" srcset="https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-500x281.png 500w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-140x79.png 140w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-768x432.png 768w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-1536x864.png 1536w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-2048x1152.png 2048w" sizes="(max-width: 500px) 100vw, 500px">
+                            <div class="card-body">
+                                <h5 class="card-title">${designer.getFullName()}</h5>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </c:forEach>
+                
+                
             </div>
             <div class="col-md-4 mb-4">
                 <a href="/designerShopPage" class="text-decoration-none text-dark">
