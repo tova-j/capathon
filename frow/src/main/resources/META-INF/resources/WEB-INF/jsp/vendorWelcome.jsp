@@ -60,7 +60,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/shopPage">Buy</a>
+              <a class="nav-link" href="/vendorShopPage">Buy</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/vendorOrders">Orders</a>

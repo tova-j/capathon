@@ -27,3 +27,5 @@ values (1, 'user1', '1234', 'JOON', 'IM', 'ROLE_DESIGNER');
 
 insert into custom_user (id, username, password, role)
 values (2, 'user2', '123456', 'ROLE_VENDOR');
+
+
