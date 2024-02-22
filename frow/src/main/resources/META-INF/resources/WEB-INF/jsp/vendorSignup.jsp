@@ -93,7 +93,7 @@
           <h2 class="display-6 dark-text">Welcome to the vendor application page.</h2>
 
             <hr class="dark-text">
-            <p>We would love to have you on board as one of our select vendors, with access to XX unique luxury brands. 
+            <p>We would love to have you on board as one of our select vendors, with exclusive access to over 100 renowned luxury designers. 
                 Please fill out the form with your information, and we will get back to you with a decision on your 
                 application as soon as we can.
             </p>

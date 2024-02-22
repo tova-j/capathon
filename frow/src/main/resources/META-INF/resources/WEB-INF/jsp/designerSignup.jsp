@@ -93,7 +93,7 @@
           <h2 class="display-6 dark-text">Welcome to the designer application page.</h2>
 
             <hr class="dark-text">
-            <p>We would love to have you on board as one of our select designers, with access to XX invested vendors. 
+            <p>We would love to have you on board as one of our select designers, with exclusive access to over 200 invested vendors. 
                 Please fill out the form with your information, and we will get back to you with a decision on your 
                 application as soon as we can.
             </p>
