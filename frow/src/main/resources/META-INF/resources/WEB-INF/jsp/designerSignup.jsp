@@ -117,49 +117,19 @@
                     </fieldset></li>
 
                     <li><fieldset class="mb-3">
-                        <label>What are your brand values? </label> 
-                        <div><input type="text" required="required"/>
-                        <errors cssClass="text-warning"/></div>
-                    </fieldset></li>
-
-                    <li><fieldset class="mb-3">
-                        <label>What are your sustainability goals in the next 5 years? </label> 
-                        <div><input type="text" required="required"/>
-                        <errors cssClass="text-warning"/></div>
-                    </fieldset></li>
-
-                    <li><fieldset class="mb-3">
-                        <label>Do you have any physical locations? If so, how many and where? </label> 
-                        <div><input type="text" required="required"/>
-                        <errors cssClass="text-warning"/></div>
-                    </fieldset></li>
-
-                    <li><fieldset class="mb-3">
-                        <label>Do you have an online presence? If so, where? Please include a link. </label> 
-                        <div><input type="text" required="required"/>
-                        <errors cssClass="text-warning"/></div>
-                    </fieldset></li>
-
-                    <li><fieldset class="mb-3">
-                        <label>What is your projected growth in the next 5 years? </label> 
-                        <div><input type="text" required="required"/>
-                        <errors cssClass="text-warning"/></div>
-                    </fieldset></li>
-
-                    <li><fieldset class="mb-3">
-                        <label>What is your profit markup/margin? </label> 
-                        <div><input type="text" required="required"/>
-                        <errors cssClass="text-warning"/></div>
-                    </fieldset></li>
-
-                    <li><fieldset class="mb-3">
-                        <label>What is your annual revenue? </label> 
-                        <div><input type="text" required="required"/>
-                        <errors cssClass="text-warning"/></div>
-                    </fieldset></li>
-
-                    <li><fieldset class="mb-3">
                         <label>Tell us about your customer base. What is the demographic? How large is it? </label> 
+                        <div><input type="text" required="required"/>
+                        <errors cssClass="text-warning"/></div>
+                    </fieldset></li>
+
+                    <li><fieldset class="mb-3">
+                        <label>How do you manage your production process and ensure timely delivery of your products?</label> 
+                        <div><input type="text" required="required"/>
+                        <errors cssClass="text-warning"/></div>
+                    </fieldset></li>
+
+                    <li><fieldset class="mb-3">
+                        <label>What is your typical product release timeline?</label> 
                         <div><input type="text" required="required"/>
                         <errors cssClass="text-warning"/></div>
                     </fieldset></li>
