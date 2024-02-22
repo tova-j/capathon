@@ -25,10 +25,10 @@ values (8004, 1, 'Fall Collection', 2, 1099.99, 0);
 insert into fashion_line (fashion_line_id, designer_id, designer_name, num_outfits, price, season)
 values (8005, 1, 'Spring Collection', 0, 899.99, 3);
 
-insert into order_record (order_id, user_id, num_items)
-values (20001, 4111, 1);
-insert into order_record (order_id, user_id, num_items)
-values (20002, 4111, 2);
+-- insert into order_record (order_id, user_id, num_items)
+-- values (20001, 4111, 1);
+-- insert into order_record (order_id, user_id, num_items)
+-- values (20002, 4111, 2);
 
 insert into custom_user (id, username, password, first_name, last_name, role)
 values (1, 'user1', '1234', 'Joonyoung', 'Im', 'ROLE_DESIGNER');
@@ -41,7 +41,10 @@ values (4, 'user1', '1234', 'Giorgio', 'Armani', 'ROLE_DESIGNER');
 insert into custom_user (id, username, password, first_name, last_name, role)
 values (5, 'user4', '1234', 'Calvin', 'Klein', 'ROLE_DESIGNER');
 insert into custom_user (id, username, password, first_name, last_name, role)
-values (6, 'user3', '1234', 'Michael', 'Kors', 'ROLE_DESIGNER');
+values (6, 'user6', '1234', 'Michael', 'Kors', 'ROLE_DESIGNER');
 
-insert into custom_user (id, username, password, role)
-values (7, 'user2', '123456', 'ROLE_VENDOR');
+insert into custom_user (id, username, password, first_name, last_name, role)
+values (7, 'designer', '1234', 'John', 'Doe', 'ROLE_DESIGNER');
+insert into custom_user (id, username, password, first_name, last_name, role)
+values (8, 'vendor', '1234', 'Emma', 'Smith', 'ROLE_VENDOR');
+
