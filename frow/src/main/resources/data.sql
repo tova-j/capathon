@@ -23,7 +23,17 @@ insert into order_record (order_id, user_id, num_items)
 values (20002, 4111, 2);
 
 insert into custom_user (id, username, password, first_name, last_name, role)
-values (1, 'user1', '1234', 'JOON', 'IM', 'ROLE_DESIGNER');
+values (1, 'user1', '1234', 'Joonyoung', 'Im', 'ROLE_DESIGNER');
+insert into custom_user (id, username, password, first_name, last_name, role)
+values (2, 'user4', '1234', 'Tova  ', 'Just', 'ROLE_DESIGNER');
+insert into custom_user (id, username, password, first_name, last_name, role)
+values (3, 'user3', '1234', 'Aditya', 'Pothanaboyina', 'ROLE_DESIGNER');
+insert into custom_user (id, username, password, first_name, last_name, role)
+values (4, 'user1', '1234', 'Giorgio', 'Armani', 'ROLE_DESIGNER');
+insert into custom_user (id, username, password, first_name, last_name, role)
+values (5, 'user4', '1234', 'Calvin', 'Klein', 'ROLE_DESIGNER');
+insert into custom_user (id, username, password, first_name, last_name, role)
+values (6, 'user3', '1234', 'Michael', 'Kors', 'ROLE_DESIGNER');
 
 insert into custom_user (id, username, password, role)
-values (2, 'user2', '123456', 'ROLE_VENDOR');
+values (7, 'user2', '123456', 'ROLE_VENDOR');
