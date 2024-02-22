@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -72,15 +74,15 @@
         </div>
       </nav> 
       <div class="container">
-        <h1>Louis Vuitton</h1>
-        <p>Everyone knows LV. Shop here!</p>
+        <h1><c:out value="${designer.fullName}"/></h1>
+        <p><c:out value="${designer.role}"/></p>
         <div class="row mt-3">
             <div class="col-md-4 mb-4">
                 <a href="/outfitShopPage" class="text-decoration-none text-dark">
                     <div class="card">
                         <img decoding="async" class="aligncenter size-medium wp-image-196195" src="https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-500x281.png" alt="Dior Logo" width="350" height="281" srcset="https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-500x281.png 500w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-140x79.png 140w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-768x432.png 768w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-1536x864.png 1536w, https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo-2048x1152.png 2048w" sizes="(max-width: 500px) 100vw, 500px">
                         <div class="card-body">
-                            <h5 class="card-title">Summer Daze</h5>
+                            <h5 class="card-title">meh</h5>
                         </div>
                     </div>
                 </a>

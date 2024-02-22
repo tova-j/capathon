@@ -14,4 +14,6 @@ public interface CustomUserRepository extends JpaRepository<CustomUser, Integer>
     public CustomUser findByUsernameAndPassword(String username, String password);
 
     public List<CustomUser> findAllCustomerUsersByRole(String role);
+
+    public CustomUser findAllCustomerUsersById(int id);
 }

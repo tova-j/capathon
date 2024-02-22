@@ -79,10 +79,10 @@
         <div class="row mt-3">
                 <c:forEach var="designer" items="${designers}" varStatus="loop">
                     <div class="col-md-4">
-                        <a href="/designerShopPage" class="card-link">
+                        <a href="${pageContext.request.contextPath}/designerShopPage?id=${designer.id}" class="card-link">
                             <div class="card mb-4">
                                 <div class="card-body">
-                                    <h5 class="card-title"><c:out value="${designer}"/></h5>
+                                    <h5 class="card-title"><c:out value="${designer.fullName}"/></h5>
                                 </div>
                             </div>
                         </a>

@@ -1,5 +1,6 @@
 package com.frow.vendor;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,18 +37,20 @@ public class VendorController {
     @RequestMapping(value="/vendorShopPage")
     public String gotoShopPage(ModelMap model) {
         List<CustomUser> designers = userRepository.findAllCustomerUsersByRole("ROLE_DESIGNER");
-        List<String> designerNames = designers.stream()
-                                                .map(CustomUser::getFullName)
-                                                .collect(Collectors.toList());
-        model.addAttribute("designers", designerNames);
+        model.addAttribute("designers", designers);
         return "vendorShopPage";
     }
+    
 
     @RequestMapping(value="/designerShopPage")
-    public String gotoDesignerPage() {
-        return "designerShopPage";
+    public String designerPage(@RequestParam("id") int id, ModelMap model) {
+        // Fetch the designer's details based on the ID
+        CustomUser designer = userRepository.findAllCustomerUsersById(id);
+        // Add the designer's full name to the model
+        model.addAttribute("designer", designer);
+        return "designerShopPage"; // Return the designer page
     }
-
+    
     @RequestMapping(value="/outfitShopPage")
     public String gotoOutfitShopPage() {
         return "outfitShopPage";
