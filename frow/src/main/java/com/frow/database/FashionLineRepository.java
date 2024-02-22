@@ -10,7 +10,7 @@ import com.frow.schemas.FashionLine;
 
 public interface FashionLineRepository extends JpaRepository<FashionLine, Integer> {
     
-    public Collection<FashionLine> findFashionLineByDesignerId(int designerId);
+    public List<FashionLine> findAllFashionLinesByDesignerId(int designerId);
 
     public FashionLine findFashionLineById(int fashionLineId);
 

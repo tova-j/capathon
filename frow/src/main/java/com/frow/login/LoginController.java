@@ -19,16 +19,17 @@ import com.frow.user.CustomUserRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
 
 	private CustomUserRepository userRepository;
-	
+
 	public LoginController(CustomUserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
-	
+
 	// Home page for users that are authenticated
 	@RequestMapping(value = "/home")
 	public String goToHomepage(ModelMap model) {
@@ -49,21 +50,23 @@ public class LoginController {
 		return "";
 	}
 
-	@RequestMapping(value="/customLogin")
+	@RequestMapping(value = "/customLogin")
 	public String login() {
 		return "login";
 	}
 
-	@PostMapping(value="/loginProcess")
-	public String loginProcess(@RequestParam String usernameParameter, @RequestParam String passwordParameter) {
+	@PostMapping(value = "/loginProcess")
+	public String loginProcess(HttpServletRequest request, @RequestParam String usernameParameter, @RequestParam String passwordParameter) {
 		System.out.println(usernameParameter + " " + passwordParameter);
 		CustomUser user = userRepository.findByUsernameAndPassword(usernameParameter, passwordParameter);
 		if (user != null) {
 			System.out.println("USER" + user);
+			HttpSession session = request.getSession();
+			session.setAttribute("userId", user.getId());
+			
 			if (user.getRole().equals("ROLE_DESIGNER")) {
-				return "designerWelcome";	
-			}
-			else if (user.getRole().equals("ROLE_VENDOR")) {
+				return "designerWelcome";
+			} else if (user.getRole().equals("ROLE_VENDOR")) {
 				return "vendorWelcome";
 			}
 		}
@@ -83,12 +86,12 @@ public class LoginController {
 
 	// landing page for all users
 	@RequestMapping(value = "/landingpage", method = RequestMethod.GET)
-	public String goToLandingPage() {		
+	public String goToLandingPage() {
 		return "landingpage";
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String rootPage() {		
+	public String rootPage() {
 		return "landingpage";
 	}
 }
