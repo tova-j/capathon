@@ -81,9 +81,9 @@ public class DesignerController {
     }
 
     @PostMapping(value = "/addNewFashionLineHomepage")
-    public String addNewFashionLinePage(HttpServletRequest reqeust, @RequestParam String fashionLineName,
+    public String addNewFashionLinePage(HttpServletRequest request, @RequestParam String fashionLineName,
             @RequestParam String fashionLineSeason, @RequestParam String fashionLineDescription) {
-        HttpSession session = reqeust.getSession();
+        HttpSession session = request.getSession();
         Optional<CustomUser> user = userRepository.findById((int) session.getAttribute("userId"));
         if (user != null) {
             FashionLine fashionLine = new FashionLine(user.get().getId(),
