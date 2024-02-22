@@ -111,7 +111,10 @@
               <a class="nav-link" href="/customLogin">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/signup">Apply as Vendor</a>
+              <a class="nav-link" href="/vendor-signup">Apply as Vendor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/designer-signup">Apply as Designer</a>
             </li>
           </ul>
         </div>
