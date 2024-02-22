@@ -74,15 +74,14 @@
         </div>
       </nav> 
       <div class="container">
-        <h1><c:out value="${designer.fullName}"/></h1>
-        <p><c:out value="${designer.role}"/></p>
+        <h1><c:out value="${fashionline.getDesignerName()}"/></h1>
         <div class="row mt-3">
-            <c:forEach var="fashionLine" items="${fashionLines}" varStatus="loop">
+            <c:forEach var="outfit" items="${outfits}" varStatus="loop">
                 <div class="col-md-4">
-                    <a href="${pageContext.request.contextPath}/outfitsView?id=${fashionLine.getId()}" class="card-link">
+                    <a href="${pageContext.request.contextPath}/outfitShopPage?id=${outfit.getId()}" class="card-link">
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h5 class="card-title"><c:out value="${fashionLine.getDesignerName()}"/></h5>
+                                <h5 class="card-title"><c:out value="${outfit.getId()}"/></h5>
                             </div>
                         </div>
                     </a>

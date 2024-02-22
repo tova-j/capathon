@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.frow.database.FashionLineRepository;
+import com.frow.database.OutfitRepository;
+import com.frow.schemas.FashionLine;
+import com.frow.schemas.Outfit;
 import com.frow.user.CustomUser;
 import com.frow.user.CustomUserRepository;
 
@@ -24,6 +27,9 @@ public class VendorController {
 
     @Autowired
     private FashionLineRepository fashionLineRepository;
+
+    @Autowired
+    private OutfitRepository outfitRepository;
     /*@RequestMapping(value="vendor", method=RequestMethod.GET)
     public String gotoVendorPage() {
         return "vendorWelcome";
@@ -47,14 +53,26 @@ public class VendorController {
         // Fetch the designer's details based on the ID
         CustomUser designer = userRepository.findAllCustomerUsersById(id);
         // Add the designer's full name to the model
-        model.addAttribute("designer", designer);
+        List<FashionLine> fashionLines = fashionLineRepository.findAllFashionLinesByDesignerId(id);
+    
+    // Add the designer's details and fashion lines to the model
+    model.addAttribute("designer", designer);
+    model.addAttribute("fashionLines", fashionLines);
+    
         return "designerShopPage"; // Return the designer page
     }
     
-    @RequestMapping(value="/outfitShopPage")
-    public String gotoOutfitShopPage() {
-        return "outfitShopPage";
-    }
+    @RequestMapping(value="/outfitsView")
+    public String gotoOutfitShopPage(@RequestParam("id") int id, ModelMap model) {
+        FashionLine fashionline = fashionLineRepository.findFashionLineById(id);
+        // Add the designer's full name to the model
+        List<Outfit> outfits = outfitRepository.findOutfitsByFashionLineId(id);
+    // Add the designer's details and fashion lines to the model
+        model.addAttribute("fashionline", fashionline);
+        model.addAttribute("outfits", outfits);
+     // Return the designer page
+        return "outfitsView";
+    } 
 
     @RequestMapping(value="/cart")
     public String gotoCart() {
