@@ -115,7 +115,7 @@
     <c:if test="${role eq 'ROLE_VENDOR'}">
         <p>Welcome, Vendor!</p>
     </c:if> 
-    <a href="/logout">Logout</a>
+    <a href="/customLogout">Logout</a>
 
 </body>
 <footer>

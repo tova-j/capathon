@@ -84,7 +84,7 @@
                     <a class="nav-link" href="#">Insights</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
+                    <a class="nav-link" href="/customLogout">Logout</a>
                 </li>
             </ul>
         </div>
