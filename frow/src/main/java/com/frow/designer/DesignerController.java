@@ -95,6 +95,16 @@ public class DesignerController {
         return "redirect:designerSellHomepage";
     }
 
+    @RequestMapping(value="designer-signup", method=RequestMethod.GET)
+    public String gotoDesignerSignupPage() {
+        return "designerSignup";
+    }
+
+    @RequestMapping(value = "designer-signup", method = RequestMethod.POST)
+    public String gotoSignupConfirmationPage() {
+        return "signupConfirmation";
+    }
+
     @RequestMapping(value = "contact-us", method = RequestMethod.GET)
     public String gotoContactUsPage() {
         return "contactUs";

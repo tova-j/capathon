@@ -57,12 +57,12 @@ public class VendorController {
         return "vendorOrders";
     }
 
-    @RequestMapping(value="signup", method=RequestMethod.GET)
+    @RequestMapping(value="vendor-signup", method=RequestMethod.GET)
     public String gotoDesignerWelcomePage() {
         return "vendorSignup";
     }
 
-    @RequestMapping(value="signup", method=RequestMethod.POST)
+    @RequestMapping(value="vendor-signup", method=RequestMethod.POST)
     public String gotoSignupConfirmationPage() {
         return "signupConfirmation";
     }

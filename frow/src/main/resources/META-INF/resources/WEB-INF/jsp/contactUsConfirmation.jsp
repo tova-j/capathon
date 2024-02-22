@@ -1,16 +1,83 @@
 <html>
-    <head>
-        <!-- CSS should be loaded first thing -->
-        <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-
-        <title>Contact Us - Confirmation</title>
-    </head>
-
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FROW - Upscale Fashion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color:#333
+        }
+        header {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+        }
+        .jumbotron {
+            background-size: cover;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            bottom: 0;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .display-4 {
+            color:#333;
+            font-size: 40px;
+            padding-bottom: 20px;
+        }
+        p.label {
+            font-size: 20px;
+        }
+        p {
+            color:#333;
+        }
+        .btn {
+            background-color: #333;
+            border: 1px;
+            color: white;
+            padding: 13px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+        }
+        .btn:hover {
+            background-color: #5f5f5f;
+        }
+        .signup {
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">FROW</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+          </ul>
+        </div>
+      </nav> 
+      
+      <div class="jumbotron jumbotron-fluid" style="position:relative;">
         <div class="container">
-            <div></div>
-            <hr>
-            <div>We look forward to reading your message! We will get back to you as soon as we can.</div>
+          <h2 class="display-4">Thanks for your message.</h2>
+
+        <div class="container">
+            <p class="label">We will get back to you as soon as we can.</div>
+            <a href="/home" class="btn">Back to Home</a>
         </div>
 
         <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
