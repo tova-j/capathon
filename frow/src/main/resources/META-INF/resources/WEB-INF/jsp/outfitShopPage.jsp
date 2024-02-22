@@ -60,10 +60,10 @@
               <a class="nav-link" href="/shopPage">Buy</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contactUs">Orders</a>
+              <a class="nav-link" href="/vendorOrders">Orders</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contactUs">Insights</a>
+              <a class="nav-link" href="/vendorWelcome">Insights</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/cart">View Cart</a>
@@ -100,23 +100,31 @@
                             <th>Item</th>
                             <th>Cost</th>
                             <th>Size</th>
+                            <th>Quantity</th>
+                            <th>Add to Cart</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Item 1</td>
-                            <td>$19.99</td>
+                            <td>Shirt</td>
+                            <td>$1999.99</td>
                             <td>Medium</td>
+                            <td>0</td>
+                            <td><button class="btn btn-primary">Add to Cart</button></td>
                         </tr>
                         <tr>
-                            <td>Item 2</td>
-                            <td>$29.99</td>
+                            <td>Pants</td>
+                            <td>$2999.99</td>
                             <td>Large</td>
+                            <td>0</td>
+                            <td><button class="btn btn-primary">Add to Cart</button></td>
                         </tr>
                         <tr>
-                            <td>Item 3</td>
-                            <td>$39.99</td>
+                            <td>Shoes</td>
+                            <td>$399.99</td>
                             <td>Small</td>
+                            <td>0</td>
+                            <td><button class="btn btn-primary">Add to Cart</button></td>
                         </tr>
                     </tbody>
                 </table>
