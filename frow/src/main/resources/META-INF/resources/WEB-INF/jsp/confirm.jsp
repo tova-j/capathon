@@ -127,25 +127,28 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">FROW</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/authenticationCouncil">Authentication Council</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/customLogin">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/vendor-signup">Apply as Vendor</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/designer-signup">Apply as Designer</a>
-            </li>
-          </ul>
-        </div>
-      </nav> 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/vendorWelcome">FROW</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/vendorShopPage">Buy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/vendorOrders">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/vendorWelcome">Insights</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/moodBoards">Mood Boards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/addPieceToCart/cart">View Cart</a>
+        </li>
+      </ul>
+    </div>
+  </nav> 
       <video autoplay muted loop style="position:absolute; z-index:-1; top:0; left:0; width:100%; height:100%;">
         <source src="https://player.vimeo.com/progressive_redirect/playback/830518852/rendition/540p/file.mp4?loc=external&amp;signature=b0a9a0a2ed476765840a13941639b7f03f2c1c4d775c780bd7d29ece6772e242" type="video/mp4">
         Your browser does not support the video tag.
@@ -154,7 +157,7 @@
         <div class="container">
           <h1 class="display-4">Thank you for your Order!</h1>
           <h2 class="display-5">Order Confirmation Number</h2>
-          <h3 class="display-5">189028462917319</h3>
+          <h3 class="display-5">1011</h3>
         </div>
       </div>
       <div class="container">
@@ -162,39 +165,10 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </script>
-    <div>
-      <h2 class="text1">Global Industry Brands That Trust FROW</h2>
-      <br>
-      <div class="grid-container">
-        <div class="grid-item"><img decoding="async" src="https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-500x313.png" alt="Prada Logo" srcset="https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-500x313.png 500w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-100x63.png 100w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-140x88.png 140w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-768x480.png 768w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-1536x960.png 1536w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-2048x1280.png 2048w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-320x200.png 320w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-640x400.png 640w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-360x225.png 360w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-720x450.png 720w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-1080x675.png 1080w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-800x500.png 800w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-1024x640.png 1024w, https://1000logos.net/wp-content/uploads/2017/05/Prada-Logo-1280x800.png 1280w" sizes="(max-width: 500px) 100vw, 500px"></div>
-        <div class="grid-item"><img decoding="async" class="aligncenter size-medium wp-image-105760" src="https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-500x281.png" alt="Louis Vuitton logo" width="500" height="345" srcset="https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-500x281.png 500w, https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-140x79.png 140w, https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-768x432.png 768w, https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-1536x864.png 1536w, https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo-2048x1152.png 2048w" sizes="(max-width: 500px) 100vw, 500px"></div>
-        <div class="grid-item"><img decoding="async" class="aligncenter size-medium wp-image-89364" src="https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-500x345.png" alt="Athleta logo" width="500" height="345" srcset="https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-500x345.png 500w, https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-140x97.png 140w, https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-768x530.png 768w, https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-1536x1059.png 1536w, https://1000logos.net/wp-content/uploads/2021/02/Athleta-logo-2048x1412.png 2048w" sizes="(max-width: 500px) 100vw, 500px"></div>
-        <div class="grid-item"><img decoding="async" class="aligncenter size-medium wp-image-166861" src="https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-500x281.png" alt="Tommy Hilfiger logo" width="500" height="345" srcset="https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-500x281.png 500w, https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-140x79.png 140w, https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-768x432.png 768w, https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-1536x864.png 1536w, https://1000logos.net/wp-content/uploads/2022/08/Tommy-Hilfiger-logo-2048x1152.png 2048w" sizes="(max-width: 500px) 100vw, 500px"></div>
     
-      </div>
-      <br>
-      <br>
-      <h1 class="display-4 centered">Venturous Vendors.</h1>
-      <br>
-      <h3 class="text2 centered"> Power Of Discovery</h3>
-      <p class="centered"> identify brands that your customers will love with FROW</p>
-      <h3 class="text2 centered"> Fashion Forward</h3>
-      <p class="centered"> exclusive access to innovative & trendsetting fashion shows</p>
-      <h3 class="text2 centered"> Conscious Couture</h3>
-      <p class="centered"> curated content aligning with your brand's values</p>
-    </div>
-
-    <div class="container centered extra-bottom-padding">
-      <a class="btn btn-signup" href="/vendor-signup">Apply to be a Vendor</button>
-    </div>
     
 
 
