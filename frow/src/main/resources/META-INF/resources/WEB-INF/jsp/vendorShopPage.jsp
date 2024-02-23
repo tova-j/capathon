@@ -52,6 +52,9 @@
         .navbar-brand {
             padding: 10px;
         }
+        .padding-top {
+            padding-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -78,7 +81,7 @@
         </div>
       </nav> 
       <div class="container">
-        <h1>Designers</h1>
+        <h1 class="padding-top">Designers</h1>
         <div class="row mt-3">
                 <c:forEach var="designer" items="${designers}" varStatus="loop">
                     <div class="col-md-4">
@@ -92,26 +95,18 @@
                     </div>
                 </c:forEach>
             </div>
-            <div class="col-md-4 mb-4">
-                <a href="/designerShopPage" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img id="fancybox-img" src="https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo.png" alt="Louis Vuitton logo" width="350" height="281">
-                        <div class="card-body">
-                            <h5 class="card-title">Louis Vuitton</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 mb-4">
-                <a href="/designerShopPage" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img id="fancybox-img" src="https://1000logos.net/wp-content/uploads/2017/10/Kobe-bryant-Logo.png" alt="Kobe bryant Logo" width="350" height="281">
-                        <div class="card-body">
-                            <h5 class="card-title">Kobe Bryant</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            
+      </div>
+      <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
