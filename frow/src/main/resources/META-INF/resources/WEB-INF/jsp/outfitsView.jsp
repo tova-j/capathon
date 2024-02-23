@@ -1,6 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,7 +8,7 @@
     <title>FROW - Upscale Fashion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
+       body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
@@ -74,49 +73,43 @@
           </ul>
         </div>
       </nav> 
-      <video autoplay muted loop style="position:absolute; z-index:-1; top:0; left:0; width:100%; height:100%;">
-        <source src="https://player.vimeo.com/progressive_redirect/playback/830518852/rendition/540p/file.mp4?loc=external&amp;signature=b0a9a0a2ed476765840a13941639b7f03f2c1c4d775c780bd7d29ece6772e242" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>     
-      <div class="jumbotron jumbotron-fluid" style="position:relative;">
-        <div class="container">
-          <h1 class="display-4">Upcoming Events</h1>
-          <h2 class="display-5">FROW GALA 2024</h2>
-          <p class="lead">5.30.2024</p>
-          <h2 class="display-5">FROW FALL 2024</h2>
-          <p class="lead">9.21.2024</p>
-        </div>
-        <div class="container mt-5">
-          <button class="shop-now-btn">Shop Now</button>
-      </div>
-      </div>
       <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <h1><c:out value="${fashionline.getDesignerName()}"/></h1>
+        <div class="row mt-3">
+            <c:forEach var="outfit" items="${outfits}" varStatus="loop">
+                <div class="col-md-4">
+                    <a href="${pageContext.request.contextPath}/outfitsView/${outfit.getId()}" class="card-link">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title"><c:out value="${outfit.getId()}"/></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </c:forEach>
+        </div>
+            <div class="col-md-4 mb-4">
+                <a href= "/outfitShopPage" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img style="display: block;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://1000logos.net/wp-content/uploads/2021/11/Calvin-Klein-logo.png" width="350" height="281">
+                        <div class="card-body">
+                            <h5 class="card-title">Winter Wonders</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="/outfitShopPage" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img id="fancybox-img" src="https://1000logos.net/wp-content/uploads/2017/10/Kobe-bryant-Logo.png" alt="Kobe bryant Logo" width="350" height="281">
+                        <div class="card-body">
+                            <h5 class="card-title">Fall Frenzy</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </script>
-
-    <c:set var="role" value="${role}" />
-
-    <!-- if role is designer -->
-    <c:if test="${role eq 'ROLE_DESIGNER'}">
-        <p>Welcome, Designer!</p>
-    </c:if>
-    
-    <!-- else if role is vendor -->
-    <c:if test="${role eq 'ROLE_VENDOR'}">
-        <p>Welcome, Vendor!</p>
-    </c:if> 
-    <a href="/customLogout">Logout</a>
-
 </body>
 <footer>
     <div class="container">

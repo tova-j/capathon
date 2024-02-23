@@ -15,6 +15,7 @@ public class Piece {
     private String name;
     private double price;
     private String imageUrl;
+    private String size;
     private Gender gender;
     private ClothingType clothingType;
 
@@ -99,6 +100,10 @@ public class Piece {
 
     public void setClothingType(ClothingType clothingType) {
         this.clothingType = clothingType;
+    }
+
+    public String getSize() {
+        return size;
     }
 
     @Override

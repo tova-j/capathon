@@ -11,32 +11,41 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public class OrderRecord {
+public class CartRecord {
     
     @Id
     @GeneratedValue
     private int orderId;
 
     @JdbcTypeCode(SqlTypes.JSON)
-    public Map<Integer, Integer> orderDetails;
+    private Map<Integer, Integer> orderDetails;
 
     private int userId;
     private int numItems;
-    private double totalPrice;
-    private String purchaseDate;
+    private int pieceId;
+    private String pieceName;
+    private double price;
 
-    public OrderRecord() {
+    public CartRecord() {
 
     }
 
-    public OrderRecord(int userId) {
+
+    public CartRecord(int pieceId, int userId, int numItems, String pieceName, double price) {
+        this.pieceId = pieceId;
         this.userId = userId;
-        this.totalPrice = 0;
-        this.purchaseDate = "";
+        this.numItems = numItems;
+        this.pieceName = pieceName;
+        this.price = price;
         this.orderDetails = new HashMap<>();
+
     }
 
     public int getOrderId() {
+        return orderId;
+    }
+
+    public int getPieceId() {
         return orderId;
     }
 
@@ -50,22 +59,6 @@ public class OrderRecord {
 
     public void setOrderId(int orderId) {
         this.orderId = orderId;
-    }
-
-    public String getPurchaseDate() {
-        return purchaseDate;
-    }
-
-    public void setPurchaseDate(String purchaseDate) {
-        this.purchaseDate = purchaseDate;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
     }
 
     public int getUserId() {
@@ -84,12 +77,18 @@ public class OrderRecord {
         this.numItems = numItems;
     }
 
-    @Override
-    public String toString() {
-        return "OrderRecord [orderId=" + orderId + ", userId=" + userId + ", numItems=" + numItems + "]";
+    public String getPieceName() {
+        return pieceName;
     }
 
-    public void setOrderDetails(Map<Integer,Integer> orderDetails) {
-        this.orderDetails = orderDetails;
+    public double getPrice() {
+        return price;
     }
+
+    @Override
+    public String toString() {
+        return "CartRecord [orderId=" + orderId + ", userId=" + userId + ", numItems=" + numItems + "]";
+    }
+
+    
 }

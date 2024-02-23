@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.lang.NonNull;
 
+import com.frow.schemas.FashionLine;
 import com.frow.schemas.Outfit;
 
 
