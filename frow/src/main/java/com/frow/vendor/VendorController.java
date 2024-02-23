@@ -65,6 +65,12 @@ public class VendorController {
         return "outfitShopPage";
     }
 
+    @RequestMapping(value="/moodBoards", method=RequestMethod.GET)
+    public String gotoMoodBoardsPage() {
+        return "moodBoards";
+    }
+    
+
     @RequestMapping(value="/cart")
     public String gotoCart() {
         return "cart";
