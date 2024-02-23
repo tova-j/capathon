@@ -79,6 +79,12 @@ public class LoginController {
 		return "landingpage";
 	}
 
+	@RequestMapping(value="/authenticationCouncil", method=RequestMethod.GET)
+	public String gotoAuthenticationCouncilPage() {
+		return "authenticationCouncil";
+	}
+	
+
 	// landing page for all users
 	@RequestMapping(value = "/landingpage", method = RequestMethod.GET)
 	public String goToLandingPage() {

@@ -132,6 +132,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
+              <a class="nav-link" href="/authenticationCouncil">Authentication Council</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/customLogin">Login</a>
             </li>
             <li class="nav-item">
