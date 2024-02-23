@@ -89,26 +89,17 @@
                 </div>
             </c:forEach>
         </div>
-            <div class="col-md-4 mb-4">
-                <a href= "/outfitShopPage" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img style="display: block;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://1000logos.net/wp-content/uploads/2021/11/Calvin-Klein-logo.png" width="350" height="281">
-                        <div class="card-body">
-                            <h5 class="card-title">Winter Wonders</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 mb-4">
-                <a href="/outfitShopPage" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img id="fancybox-img" src="https://1000logos.net/wp-content/uploads/2017/10/Kobe-bryant-Logo.png" alt="Kobe bryant Logo" width="350" height="281">
-                        <div class="card-body">
-                            <h5 class="card-title">Fall Frenzy</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
+      </div>
+      <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
