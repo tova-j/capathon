@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.frow.database.FashionLineRepository;
 import com.frow.database.OutfitRepository;
+import com.frow.database.PieceReposity;
 import com.frow.schemas.FashionLine;
 import com.frow.schemas.Outfit;
+import com.frow.schemas.Piece;
 import com.frow.user.CustomUser;
 import com.frow.user.CustomUserRepository;
 
@@ -30,6 +32,9 @@ public class VendorController {
 
     @Autowired
     private OutfitRepository outfitRepository;
+
+    @Autowired
+    private PieceReposity pieceReposity;
     /*@RequestMapping(value="vendor", method=RequestMethod.GET)
     public String gotoVendorPage() {
         return "vendorWelcome";
@@ -54,16 +59,15 @@ public class VendorController {
         CustomUser designer = userRepository.findAllCustomerUsersById(id);
         // Add the designer's full name to the model
         List<FashionLine> fashionLines = fashionLineRepository.findAllFashionLinesByDesignerId(id);
-    
     // Add the designer's details and fashion lines to the model
-    model.addAttribute("designer", designer);
-    model.addAttribute("fashionLines", fashionLines);
+        model.addAttribute("designer", designer);
+        model.addAttribute("fashionLines", fashionLines);
     
         return "designerShopPage"; // Return the designer page
     }
     
     @RequestMapping(value="/outfitsView")
-    public String gotoOutfitShopPage(@RequestParam("id") int id, ModelMap model) {
+    public String gotoOutfitsView(@RequestParam("id") int id, ModelMap model) {
         FashionLine fashionline = fashionLineRepository.findFashionLineById(id);
         // Add the designer's full name to the model
         List<Outfit> outfits = outfitRepository.findOutfitsByFashionLineId(id);
@@ -72,6 +76,18 @@ public class VendorController {
         model.addAttribute("outfits", outfits);
      // Return the designer page
         return "outfitsView";
+    } 
+
+    @RequestMapping(value="/outfitShopPage")
+    public String gotoOutfitShopPage(@RequestParam("id") int id, ModelMap model) {
+        Outfit outfit = outfitRepository.findOutfitById(id);
+        // Add the designer's full name to the model
+        List<Piece> pieces = pieceReposity.findPiecesByOutfitId(id);
+    // Add the designer's details and fashion lines to the model
+        model.addAttribute("outfit", outfit);
+        model.addAttribute("pieces", pieces);
+     // Return the designer page
+        return "outfitShopPage";
     } 
 
     @RequestMapping(value="/cart")

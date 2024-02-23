@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -105,27 +107,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Shirt</td>
-                            <td>$1999.99</td>
-                            <td>Medium</td>
-                            <td>0</td>
-                            <td><button class="btn btn-primary">Add to Cart</button></td>
-                        </tr>
-                        <tr>
-                            <td>Pants</td>
-                            <td>$2999.99</td>
-                            <td>Large</td>
-                            <td>0</td>
-                            <td><button class="btn btn-primary">Add to Cart</button></td>
-                        </tr>
-                        <tr>
-                            <td>Shoes</td>
-                            <td>$399.99</td>
-                            <td>Small</td>
-                            <td>0</td>
-                            <td><button class="btn btn-primary">Add to Cart</button></td>
-                        </tr>
+                        <c:forEach var="piece" items="${pieces}">
+                            <tr>
+                                <td>${piece.getName()}</td>
+                                <td>${piece.getPrice()}</td>
+                                <td>${piece.getGender()}</td>
+                                <td>0</td>
+                                <td><button class="btn btn-primary">Add to Cart</button></td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
                 <button class="btn btn-primary">Add All to Cart</button>
