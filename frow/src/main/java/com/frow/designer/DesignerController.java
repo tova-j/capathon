@@ -39,6 +39,9 @@ public class DesignerController {
     public String goToDesignerSellHomepage(ModelMap model, HttpServletRequest request) { 
         HttpSession session = request.getSession(); 
         int userId = (int) session.getAttribute("userId"); 
+        Optional<CustomUser> user = userRepository.findById(userId);
+        
+        model.addAttribute("name", user.get().getFullName());
         
         List<FashionLine> fashionLines =  fashionLineRepository.findAllFashionLinesByDesignerId(userId); 
         model.addAttribute("fashionLines",fashionLines);
