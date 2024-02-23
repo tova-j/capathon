@@ -69,7 +69,7 @@
               <a class="nav-link" href="/vendorWelcome">Insights</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cart">View Cart</a>
+              <a class="nav-link" href="/addPieceToCart/cart">View Cart</a>
             </li>
           </ul>
         </div>

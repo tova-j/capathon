@@ -68,7 +68,7 @@
               <a class="nav-link" href="/vendorWelcome">Insights</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cart">View Cart</a>
+              <a class="nav-link" href="/addPieceToCart/cart">View Cart</a>
             </li>
           </ul>
         </div>
@@ -78,7 +78,7 @@
         <div class="row mt-3">
             <c:forEach var="outfit" items="${outfits}" varStatus="loop">
                 <div class="col-md-4">
-                    <a href="${pageContext.request.contextPath}/outfitShopPage?id=${outfit.getId()}" class="card-link">
+                    <a href="${pageContext.request.contextPath}/outfitsView/${outfit.getId()}" class="card-link">
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h5 class="card-title"><c:out value="${outfit.getId()}"/></h5>
