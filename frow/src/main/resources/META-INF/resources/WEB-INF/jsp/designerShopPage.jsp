@@ -75,7 +75,6 @@
       </nav> 
       <div class="container">
         <h1><c:out value="${designer.fullName}"/></h1>
-        <p><c:out value="${designer.role}"/></p>
         <div class="row mt-3">
             <c:forEach var="fashionLine" items="${fashionLines}" varStatus="loop">
                 <div class="col-md-4">
