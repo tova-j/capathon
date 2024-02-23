@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -8,7 +7,7 @@
     <title>FROW - Upscale Fashion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-       body {
+        body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
@@ -51,6 +50,16 @@
         .navbar-brand {
             padding: 10px;
         }
+        .padding-top {
+            padding-top: 40px;
+        }
+        .centered {
+            text-align: center;
+        }
+        img {
+            max-width:33%;
+            padding: 8px;
+        }
     </style>
 </head>
 <body>
@@ -71,38 +80,40 @@
                 <a class="nav-link" href="/moodBoards">Mood Boards</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/addPieceToCart/cart">View Cart</a>
+              <a class="nav-link" href="/cart">View Cart</a>
             </li>
           </ul>
         </div>
       </nav>
-      
-<div class="container mt-5">
-    <h2>Your orders.</h2>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Order ID</th>
-                    <th>Date</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach items="${orders}" var="order">
-                    <tr>
-                        <td>${order.orderId}</td>
-                        <td>${order.purchaseDate}</td>
-                        <td>${order.numItems}</td>
-                        <td>${order.totalPrice}</td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
-    </div>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+      <div class="container">
+        <h1 class="display-4 centered padding-top">Mood Boards</h1>
+
+        <div class="row">
+            <div class="column">
+            <img src="images/moodboard3.jpg">
+            <img src="images/moodboard1.jpg">
+            <img src="images/moodboard5.jpg">
+            </div>
+            <div class="column">
+            <img src="images/moodboard6.jpg">
+            <img src="images/moodboard2.jpg">
+            <img src="images/moodboard4.jpg">
+            </div>
+        </div>
+
+      <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
 </body>
 <footer>
     <div class="container">
@@ -110,5 +121,3 @@
     </div>
 </footer>
 </html>
-
-

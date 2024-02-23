@@ -69,6 +69,12 @@
               <a class="nav-link" href="/vendorWelcome">Insights</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/moodBoards">Mood Boards</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/moodBoards">Mood Boards</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/addPieceToCart/cart">View Cart</a>
             </li>
           </ul>

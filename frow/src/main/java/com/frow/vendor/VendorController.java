@@ -116,6 +116,12 @@ public class VendorController {
         return "outfitShopPage";
     }
 
+    @RequestMapping(value="/moodBoards", method=RequestMethod.GET)
+    public String gotoMoodBoardsPage() {
+        return "moodBoards";
+    }
+    
+
     @RequestMapping(value = "/addPieceToCart/cart")
     public String gotoCart(HttpServletRequest request, ModelMap model) {
         HttpSession session = request.getSession();
