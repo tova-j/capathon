@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -181,12 +182,20 @@ public class VendorController {
     }
 
     @PostMapping(value="/checkout")
-    public String checkOut(HttpServletRequest request, @RequestParam List<CartRecord> cartRecords) {
-        HttpSession session = request.getSession();
-        int userId = (int) session.getAttribute("userId");
-        Map<Integer,Integer> orderDetails = cartRecords.stream()
-        .collect(Collectors.groupingBy(CartRecord::getPieceId, Collectors.summingInt(CartRecord::getNumItems)));
+    public String checkOut(HttpServletRequest request, @RequestBody List<CartRecord> cartRecords) {
+        System.out.println("HERE " + cartRecords);
+        // HttpSession session = request.getSession();
+        // int userId = (int) session.getAttribute("userId");
+        // Map<Integer,Integer> orderDetails = cartRecords.stream()
+        // .collect(Collectors.groupingBy(CartRecord::getPieceId, Collectors.summingInt(CartRecord::getNumItems)));
         
+        // double total = 0;
+        // for (CartRecord cartRecord : cartRecords) {
+        //     total += cartRecord.getPrice();
+        // }
+        // total = Math.round(total * 100.0) / 100.0;
+
+        // orderRecordRepository.save(new OrderRecord(userId, total, orderDetails));
         return "checkout";
     }
 
