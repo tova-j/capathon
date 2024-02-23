@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -66,7 +69,7 @@
               <a class="nav-link" href="/vendorWelcome">Insights</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cart">View Cart</a>
+              <a class="nav-link" href="/addPieceToCart/cart">View Cart</a>
             </li>
           </ul>
         </div>
@@ -80,12 +83,12 @@
           <ul class="list-group mb-3">
 
             
-            <c:forEach>
+            <c:forEach var="cartRecord" items="${cartRecords}">
               <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                  <h6 class="my-0">Product name</h6>
+                  <h6 class="my-0">${cartRecord.getPieceName()}</h6>
                 </div>
-                <span class="text-muted">$12</span>
+                <span class="text-muted">$${cartRecord.getPrice()}</span>
               </li>
             </c:forEach>
 
@@ -100,7 +103,7 @@
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (USD)</span>
-              <strong>$20</strong>
+              <strong>$${total}</strong>
             </li>
           </ul>
 
@@ -115,7 +118,7 @@
         </div>
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Billing address</h4>
-          <form class="needs-validation" novalidate="">
+          <form action="/checkout" method="post" class="needs-validation" novalidate="">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>

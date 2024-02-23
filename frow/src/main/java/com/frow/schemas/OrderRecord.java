@@ -23,17 +23,17 @@ public class OrderRecord {
     private int userId;
     private int numItems;
     private int pieceId;
-
+    
     public OrderRecord() {
 
     }
 
 
-    public OrderRecord(int pieceId, int userId, int numItems) {
+    public OrderRecord(int userId, int numItems) {
         this.pieceId = pieceId;
         this.userId = userId;
         this.numItems = numItems;
-        this.orderDetails = new HashMap<>();
+        this.orderDetails = orderDetails;
 
     }
 
@@ -74,5 +74,7 @@ public class OrderRecord {
         return "OrderRecord [orderId=" + orderId + ", userId=" + userId + ", numItems=" + numItems + "]";
     }
 
-    
+    public void setOrderDetails(Map<Integer,Integer> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
 }

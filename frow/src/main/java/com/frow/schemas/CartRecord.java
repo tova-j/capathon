@@ -23,21 +23,29 @@ public class CartRecord {
     private int userId;
     private int numItems;
     private int pieceId;
+    private String pieceName;
+    private double price;
 
     public CartRecord() {
 
     }
 
 
-    public CartRecord(int pieceId, int userId, int numItems) {
+    public CartRecord(int pieceId, int userId, int numItems, String pieceName, double price) {
         this.pieceId = pieceId;
         this.userId = userId;
         this.numItems = numItems;
+        this.pieceName = pieceName;
+        this.price = price;
         this.orderDetails = new HashMap<>();
 
     }
 
     public int getOrderId() {
+        return orderId;
+    }
+
+    public int getPieceId() {
         return orderId;
     }
 
@@ -67,6 +75,14 @@ public class CartRecord {
 
     public void setNumItems(int numItems) {
         this.numItems = numItems;
+    }
+
+    public String getPieceName() {
+        return pieceName;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     @Override
