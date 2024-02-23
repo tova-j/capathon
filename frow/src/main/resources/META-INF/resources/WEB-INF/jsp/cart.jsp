@@ -1,9 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-  <%@ page import="com.fasterxml.jackson.databind.ObjectMapper" %>
-
-
-    <html>
-
+<%@ page import="com.fasterxml.jackson.databind.ObjectMapper" %>
+<html>
     <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -110,13 +107,6 @@
 
 
 
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">-$5</span>
-            </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (USD)</span>
               <strong>$${total}</strong>
@@ -276,12 +266,7 @@
             </div>
           </div>
           <hr class="mb-4">
-          <form action="/checkout" method="post">
-            <input type="hidden" name="cartRecords" value="${cartRecords}">
-            <button id="checkoutButton" class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
-          </form>
-
-
+            <a id="checkoutButton" href="/confirm" class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</a>
         </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

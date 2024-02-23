@@ -199,4 +199,9 @@ public class VendorController {
         return "checkout";
     }
 
+    @RequestMapping(value = "/confirm")
+    public String gotoconfirm() {
+        return "confirm";
+    }
+
 }
