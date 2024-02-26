@@ -95,12 +95,23 @@
                         <td>${order.orderId}</td>
                         <td>${order.purchaseDate}</td>
                         <td>${order.numItems}</td>
-                        <td>${order.totalPrice}</td>
+                        <td>$${order.totalPrice}</td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
     </div>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
 </div>
 
 <div class="container">

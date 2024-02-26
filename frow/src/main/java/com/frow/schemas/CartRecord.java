@@ -5,7 +5,8 @@ import java.util.Map;
 
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -86,9 +87,19 @@ public class CartRecord {
     }
 
     @Override
-    public String toString() {
-        return "CartRecord [orderId=" + orderId + ", userId=" + userId + ", numItems=" + numItems + "]";
+     public String toString() {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            // Convert the CartRecord object to JSON
+            return objectMapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            // Handle the exception if there's an issue during serialization
+            e.printStackTrace();
+            return "{}"; // Return an empty JSON object as a fallback
+        }
     }
+    //"[{"asdf": "asdf"}]"
 
     
 }

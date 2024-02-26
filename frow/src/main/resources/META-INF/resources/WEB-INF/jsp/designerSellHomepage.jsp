@@ -30,6 +30,9 @@
         -moz-user-select: none;
         user-select: none;
       }
+      .btn.btn-primary.my-2 {
+        background-color: #747f69;
+      }
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -79,7 +82,7 @@
       <section class="py-5 text-center container">
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Brand name</h1>
+            <h1 class="fw-light">Welcome ${name}</h1>
 
 
 

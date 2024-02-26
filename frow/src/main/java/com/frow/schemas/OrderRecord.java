@@ -29,11 +29,11 @@ public class OrderRecord {
 
     }
 
-    public OrderRecord(int userId) {
+    public OrderRecord(int userId, double totalPrice, Map<Integer,Integer> orderDetails) {
         this.userId = userId;
-        this.totalPrice = 0;
+        this.totalPrice = totalPrice;
         this.purchaseDate = "";
-        this.orderDetails = new HashMap<>();
+        this.orderDetails = orderDetails;
     }
 
     public int getOrderId() {

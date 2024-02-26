@@ -15,7 +15,7 @@ import jakarta.transaction.Transactional;
 @Transactional
 public interface PieceRepository extends JpaRepository<Piece, Integer> {
 
-    public Collection<Piece> findPiecesByOutfitId(int outfitId);
+    public List<Piece> findPiecesByOutfitId(int outfitId);
 
     public Piece findPieceById(int pieceId);
 
