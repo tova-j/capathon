@@ -1,6 +1,5 @@
 package com.frow.schemas;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.hibernate.annotations.JdbcTypeCode;
@@ -26,7 +25,7 @@ public class OrderRecord {
     private String purchaseDate;
 
     public OrderRecord() {
-
+        // need to provide this in order for DB application to work
     }
 
     public OrderRecord(int userId, double totalPrice, Map<Integer,Integer> orderDetails) {

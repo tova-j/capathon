@@ -1,10 +1,8 @@
 package com.frow.designer;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +19,6 @@ import com.frow.schemas.FashionLine;
 import com.frow.schemas.Outfit;
 import com.frow.user.CustomUser;
 import com.frow.user.CustomUserRepository;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
@@ -63,19 +60,18 @@ public class DesignerController {
         Integer id = Integer.parseInt(fashionLineId);
         Optional<FashionLine> fashionLine = fashionLineRepository.findById(id);
         
-        if (fashionLine != null) {
+        if (fashionLine.isEmpty()) {
             System.out.println(fashionLine.get());
             model.addAttribute("fashionLine", fashionLine.get());
             return "openFashionLine";
-        }
+        } 
         return "designerSellHomepage";
     }
 
     @GetMapping(value="/designer/fashionLines/{fashionLineId}/outfits")
     public String openFashionLineOutfits(@PathVariable String fashionLineId, ModelMap model) {
-        Integer id = Integer.parseInt(fashionLineId);
-        
-        if (id != null) {
+        if (fashionLineId != null) {
+            Integer id = Integer.parseInt(fashionLineId);
             List<Outfit> outfits = outfitRepository.findOutfitsByFashionLineId(id);
             model.addAttribute("outfits", outfits);
             return "openOutfits";

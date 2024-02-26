@@ -1,24 +1,22 @@
 package com.frow.vendor;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.Optional;
+
+// -- imports used for broken function
+// import java.util.Map;
+// import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.frow.database.CartRecordRepository;
 import com.frow.database.FashionLineRepository;
@@ -47,24 +45,15 @@ public class VendorController {
 
     @Autowired
     private OrderRecordRepository orderRecordRepository;
-    /*@RequestMapping(value="vendor", method=RequestMethod.GET)
-    public String gotoVendorPage() {
-        return "vendorWelcome";
-    }*/
 
     @Autowired
     private OutfitRepository outfitRepository;
+
     @Autowired
     private CartRecordRepository cartRepository;
 
     @Autowired
     private PieceRepository pieceRepository;
-    /*
-     * @RequestMapping(value="vendor", method=RequestMethod.GET)
-     * public String gotoVendorPage() {
-     * return "vendorWelcome";
-     * }
-     */
 
     @RequestMapping(value = "/vendorWelcome")
     public String gotoVendorPage() {
@@ -94,21 +83,24 @@ public class VendorController {
 
     @RequestMapping(value = "/outfitsView")
     public String gotoOutfitShopPage(@RequestParam("id") int id, ModelMap model) {
-        FashionLine fashionline = fashionLineRepository.findFashionLineById(id);
-        // Add the designer's full name to the model
-        List<Outfit> outfits = outfitRepository.findOutfitsByFashionLineId(id);
-        // Add the designer's details and fashion lines to the model
-        model.addAttribute("fashionline", fashionline);
-        model.addAttribute("outfits", outfits);
-        // Return the designer page
-        return "outfitsView";
+        Optional<FashionLine> optionalFashionline = fashionLineRepository.findById(id);
+        FashionLine fashionline = optionalFashionline.orElse(null);
+        if (fashionline != null) {
+            // Find the outfits in the fashion line
+            List<Outfit> outfits = outfitRepository.findOutfitsByFashionLineId(id);
+            // Add the outfit's details and fashion line to the model
+            model.addAttribute("fashionline", fashionline);
+            model.addAttribute("outfits", outfits);
+            // Return the outfit page
+            return "outfitsView";
+        }
+        return "vendorShopPage";
     }
 
     @RequestMapping(value = "/outfitsView/{outfitId}")
     public String openOutfit(@PathVariable int outfitId, ModelMap model) {
         List<Piece> pieces = pieceRepository.findAllByOutfitId(outfitId);
         model.addAttribute("pieces", pieces);
-        System.out.println("PIEEECEECECE" + pieces);
         return "outfitShopPage";
     }
 
@@ -171,19 +163,25 @@ public class VendorController {
     @RequestMapping(value = "/addPieceToCart/{pieceId}")
     public String addPieceToCart(HttpServletRequest request, @PathVariable String pieceId) {
         // Extract data from the request body
-        System.out.println("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEERE  ");
 
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
-        Piece piece = pieceRepository.findPieceById(Integer.parseInt(pieceId));
-        CartRecord order = new CartRecord(Integer.parseInt(pieceId), userId, 1, piece.getName(), piece.getPrice());
-        cartRepository.save(order);
-        return "redirect:cart";
+        Optional<Piece> optionalPiece = pieceRepository.findById(Integer.parseInt(pieceId));
+        Piece piece = optionalPiece.orElse(null);
+        if (piece != null) {
+            CartRecord order = new CartRecord(Integer.parseInt(pieceId), userId, 1, piece.getName(), piece.getPrice());
+            cartRepository.save(order);
+            return "redirect:cart";
+        } else {
+            return "vendorShopPage";
+        }
     }
 
     @PostMapping(value="/checkout")
     public String checkOut(HttpServletRequest request, @RequestBody List<CartRecord> cartRecords) {
-        System.out.println("HERE " + cartRecords);
+        // used for troubleshooting- System.out.println("HERE " + cartRecords);
+        // issue: cartRecords empty :( so the checkout page has been hardcoded with one pair of $20.99 jeans.
+
         // HttpSession session = request.getSession();
         // int userId = (int) session.getAttribute("userId");
         // Map<Integer,Integer> orderDetails = cartRecords.stream()

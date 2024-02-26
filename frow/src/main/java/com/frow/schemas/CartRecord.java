@@ -42,13 +42,6 @@ public class CartRecord {
 
     }
 
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public int getPieceId() {
-        return orderId;
-    }
 
     public void addOrderItem(int itemId, int quantity) {
         orderDetails.put(itemId, quantity);
@@ -56,6 +49,10 @@ public class CartRecord {
 
     public Map<Integer, Integer> getOrderDetails() {
         return orderDetails;
+    }
+
+    public int getOrderId() {
+        return orderId;
     }
 
     public void setOrderId(int orderId) {
@@ -78,8 +75,24 @@ public class CartRecord {
         this.numItems = numItems;
     }
 
+    public int getPieceId() {
+        return pieceId;
+    }
+
+    public void setPieceId(int pieceId) {
+        this.pieceId = pieceId;
+    }
+
+    public void setPieceName(String pieceName) {
+        this.pieceName = pieceName;
+    }
+
     public String getPieceName() {
         return pieceName;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public double getPrice() {

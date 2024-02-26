@@ -1,8 +1,8 @@
 package com.frow;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,8 +15,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FrowApplication implements CommandLineRunner {
 
+	/* This section of code used for tests in the run(...) function
+
 	// create a logger (use the org.slf4j one)
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	// private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	// @Autowired
 	// PieceReposity pieceRepo;
@@ -29,6 +31,7 @@ public class FrowApplication implements CommandLineRunner {
 
 	// @Autowired
 	// OrderRecordRepository orderRepo;
+	*/
 
 	public static void main(String[] args) {
 		SpringApplication.run(FrowApplication.class, args);
@@ -36,11 +39,6 @@ public class FrowApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// want to actually execute the query, so need to call
-		// 	our predefined method on the corresponding instance of that class
-
-		// note JPA's built in findBy methods return an optional<> object
-
 		/* Previous tests
 		// Testing Pieces repo
 		logger.info("\nAll pieces -> {}", pieceRepo.findAll());

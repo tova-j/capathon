@@ -45,17 +45,13 @@ public class LoginConfiguration {
 		return new BCryptPasswordEncoder();
 	}
 
+	@SuppressWarnings("removal")
 	@Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.csrf(c -> c.disable());
 		http.authorizeHttpRequests(
 			auth -> auth.anyRequest().authenticated());
-		http.headers().frameOptions().disable();
-		// http
-		// 	.formLogin(
-		// 		login -> login
-		// 			.loginPage("/login")
-		// 			.loginProcessingUrl("/loginProcess"));
+        http.headers(headers -> headers.frameOptions().disable());
 		http.formLogin(Customizer.withDefaults());
 		return http.build();
     }
